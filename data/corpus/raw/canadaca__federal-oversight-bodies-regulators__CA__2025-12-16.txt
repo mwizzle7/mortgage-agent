@@ -1,0 +1,173 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/financial-consumer-agency/corporate/federal-oversight-bodies-regulators.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+FCAC'S PARTNERS AND COLLABORATORS
+The Financial Consumer Agency of Canada (FCAC) plays a leadership role in protecting financial consumers and advancing their rights and interests by working in partnership with federal, provincial, territorial and international departments and agencies and collaborating with domestic and international stakeholders and organizations. These relationships enable the Agency to extend its reach and impact and share information and best practices that contribute to protecting financial consumers.
+ON THIS PAGE
+Canadian oversight organizations Financial Institutions Supervisory Committee (FISC) Senior Advisory Committee (SAC) CDIC Board of Directors Provincial and territorial regulators Insurance regulators
+Financial Institutions Supervisory Committee (FISC)
+Senior Advisory Committee (SAC)
+CDIC Board of Directors
+Provincial and territorial regulators
+Insurance regulators
+Financial literacy committees and networks Financial Literacy Working Group for Indigenous Peoples FCAC Research Committee on Financial Literacy (2022 to 2025) Interdepartmental Committee on Financial Literacy ​Financial literacy networks
+Financial Literacy Working Group for Indigenous Peoples
+FCAC Research Committee on Financial Literacy (2022 to 2025)
+Interdepartmental Committee on Financial Literacy
+​Financial literacy networks
+International collaboration International Financial Consumer Protection Organisation (FinCoNet) G20-OECD Task Force on Financial Consumer Protection OECD International Network on Financial Education
+International Financial Consumer Protection Organisation (FinCoNet)
+G20-OECD Task Force on Financial Consumer Protection
+OECD International Network on Financial Education
+CANADIAN OVERSIGHT ORGANIZATIONS
+FCAC coordinates its work with other national and provincial regulatory agencies that share a responsibility for overseeing Canada’s financial system and keeping it safe.
+FINANCIAL INSTITUTIONS SUPERVISORY COMMITTEE (FISC)
+FCAC is a member of the Financial Institutions Supervisory Committee (FISC), which shares information and discusses issues relating to the supervision of federally regulated financial institutions and financial sector policy. The other members are the Office of the Superintendent of Financial institutions, the Canada Deposit Insurance Corporation, the Bank of Canada, and the Department of Finance Canada.
+SENIOR ADVISORY COMMITTEE (SAC)
+The Senior Advisory Committee (SAC) is a discussion forum for financial sector policy issues, including financial stability and systemic vulnerabilities. It is chaired by the Deputy Minister of Finance and includes the same members as FISC.
+CDIC BOARD OF DIRECTORS
+The FCAC Commissioner sits as an “ex officio” member on the Board of Directors of the Canada Deposit Insurance Corporation (CDIC), along with the leaders of the Department of Finance, the Bank of Canada, and the Office of the Superintendent of Financial Institutions. Board members provide knowledge of the financial, supervisory and regulatory environment in which CDIC operates.
+PROVINCIAL AND TERRITORIAL REGULATORS
+FCAC engages regularly and shares information on financial consumer protection with provincial and territorial agencies that have a responsibility for regulating financial institutions in their jurisdictions. These financial institutions include securities dealers, credit unions and caisses populaires, as well as other institutions that are registered or incorporated at the provincial level.
+Alberta
+Treasury Board and Finance
+Alberta Securities Commission
+British Columbia
+BC Financial Services Authority
+British Columbia Securities Commission
+Manitoba
+Financial Institutions Regulation Branch
+Manitoba Securities Commission
+New Brunswick
+Financial and Consumer Services Commission
+Newfoundland and Labrador
+Consumer and Commercial Affairs Branch
+Securities Commission of Newfoundland and Labrador
+Northwest Territories
+Office of the Superintendent of Insurance
+Northwest Territories Securities Office
+Nova Scotia
+Financial Services Division
+Nova Scotia Securities Commission
+Nunavut
+Government of Nunavut
+Nunavut Office of the Superintendent of Securities
+Ontario
+Financial Services Regulatory Authority of Ontario
+Ontario Securities Commission
+Prince Edward Island
+Consumer, Labour and Financial Services Division
+Prince Edward Island Office of the Superintendent of Securities
+Quebec
+Autorité des marchés financiers
+Saskatchewan
+Financial and Consumer Affairs Authority
+Yukon
+Government of Yukon
+Office of the Yukon Superintendent of Securities
+INSURANCE REGULATORS
+As part of its role in overseeing the compliance of federally incorporated trust, loan and insurance companies with consumer protection laws, the Agency engages with national, provincial and territorial insurance regulators.
+Canadian Council of Insurance Regulators
+Office of the Superintendent of Financial Institutions Canada
+Alberta, Superintendent of Insurance
+British Columbia, BC Financial Services Authority
+Ontario, Financial Services Regulatory Authority ( FSRA )
+Manitoba, Financial Institutions Regulations Branch
+New Brunswick, Financial and Consumer Services Commission—Insurance Division
+Newfoundland, Superintendent of Insurance
+Northwest Territories, Superintendent of Insurance
+Nova Scotia, Superintendent of Insurance
+Prince Edward Island, Department of Justice and Public Safety
+Quebec, Autorité des marchés financiers
+Saskatchewan, Insurance Councils of Saskatchewan
+Saskatchewan, Financial and Consumer Affairs Authority
+Yukon government departments
+FINANCIAL LITERACY COMMITTEES AND NETWORKS
+FCAC is a national leader in financial literacy and is committed to working with Canada’s rich stakeholder community to advance the priorities outlined in the National Financial Literacy Strategy 2021-2026 . By mobilizing communities, organizations, and governments to work together and maximize their resources, the Agency helps to Canadians strengthen their financial literacy and achieve positive financial outcomes.
+FINANCIAL LITERACY WORKING GROUP FOR INDIGENOUS PEOPLES
+The Financial Literacy Working Group for Indigenous Peoples was established to assist FCAC in responding to the financial literacy needs of Indigenous Peoples, including First Nations, Inuit and the Métis Nations. The working group’s mandate is to undertake financial literacy initiatives that are community-driven, created for and with Indigenous Peoples. It is comprised of leaders from a broad representation of Indigenous and non-Indigenous organizations.
+The working group focuses efforts on sharing information about Indigenous financial literacy initiatives, establishing collaborative partnerships for developing and delivering new initiatives, and identifying gaps that could be addressed by undertaking research.
+Consult the biographies of the Financial Literacy Working Group for Indigenous Peoples members.
+FCAC RESEARCH COMMITTEE ON FINANCIAL LITERACY (2022 TO 2025)
+The Research Committee advises FCAC on the implementation of the National Financial Literacy Strategy through presenting research, exchanging information, and sharing insights on methods for reducing barriers and catalyzing actions within the financial ecosystem.
+The Research Committee also promotes research findings and collaborations to advance the National Strategy’s priorities within the broader research community.
+Members of the Research Committee are:
+Ruth Stephen (Chair), Financial Consumer Agency of Canada
+Dr. Kara Brisson-Boivin, MediaSmarts
+Dr. Jerry Buckland, Canadian Mennonite University
+Dr. J. Michael Collins, University of Wisconsin-Madison
+Dr. Philippe d’Astous, HEC Montreal
+Dr. Matt Davison, Western University
+Dr. Andrea Sticha, Stanford University
+Dr. Chuck Howard, University of Virginia
+Dr. Muharem Kianieff, University of Windsor
+Lisa Rae, Prosper Canada
+Dr. Miwako Nitani, University of Ottawa
+Louise Simbandumwe, SEED Winnipeg
+Molly Willats, Fintechs Canada
+Dr. Jiaying Zhao, University of British Columbia
+INTERDEPARTMENTAL COMMITTEE ON FINANCIAL LITERACY
+The Interdepartmental Committee on Financial Literacy is chaired by FCAC and is composed of representatives from federal government departments and agencies with an interest in financial literacy. The Committee’s role is to:
+contribute to the implementation of the National Financial Literacy Strategy
+facilitate information sharing with federal departments and agencies
+identify gaps and opportunities to collaborate and coordinate on financial literacy initiatives across federal departments and agencies
+facilitate an integrated approach that seeks to embed financial literacy in federal government programs, policies and training
+increase efficiency by resolving overlapping initiatives and avoiding duplication of effort
+engage stakeholders in research and discussion on financial literacy
+Member organizations include:
+Bank of Canada
+Canada Deposit Insurance Corporation
+Canada Mortgage and Housing Corporation
+Canada Revenue Agency
+Canadian Anti-Fraud Centre
+Canadian Forces Morale and Welfare Services – SISIP Financial Services
+Department for Women and Gender Equality
+Department of Finance Canada
+Employment and Social Development Canada
+Financial Consumer Agency of Canada
+Immigration, Refugees and Citizenship Canada
+Indigenous Services Canada
+Innovation, Science and Economic Development Canada
+Office of the Privacy Commissioner of Canada
+Office of the Superintendent of Financial Institutions
+Public Services and Procurement Canada – Receiver General Modernization
+Statistics Canada
+​FINANCIAL LITERACY NETWORKS
+FCAC engages and shares resources and best practices with financial literacy networks representing hundreds of organizations to advance financial literacy in Canada. Members include:
+ABLE Steering Committee (Asset Building Learning Exchange)
+Alberta Financial Empowerment Collaborative, Alberta​
+Aspire Calgary Financial Empowerment Collaborative , Calgary, Alberta
+Black Creek Financial Action Network (BCFAN) , Toronto, Ontario
+Canadian Financial Empowerment Network for those with Disabilities (CFEND), Toronto, Ontario
+Chilliwack Literacy Committee , Chilliwack, British Columbia
+Edmonton Financial Empowerment Collaborative ​, Edmonton, Alberta
+Financial Education Network (FEN) , Saint John, New Brunswick
+Financial Empowerment Network of Nova Scotia (FENNS) , Nova Scotia
+Financial Literacy Action Group (FLAG), Toronto, Ontario
+Financial Literacy Action Network Ottawa (FLANO)​ , Ottawa, Ontario
+Financial Literacy Youth Network (FLYN) , Toronto, Ontario
+Manitoba Financial Empowerment Collaborative, Manitoba
+Manitoba Financial Literacy Forum, Winnipeg, Manitoba
+Newfoundland and Labrador Financial Literacy Network, St. John's, Newfoundland and Labrador
+Québec Financial Education Experts Network​ , Québec City, Québec
+SaskMoney , Saskatchewan
+Yukon Literacy Coalition , Whitehorse, Yukon
+To add your network to this list, please contact us at fcac.engagement.acfc@fcac-acfc.gc.ca .
+INTERNATIONAL COLLABORATION
+FCAC is a respected member of international forums that influence regulatory and policy development and financial literacy efforts. FCAC and its international peers work together to promote and advance effective protections, strengthen financial literacy, and maintain financial sector stability.
+INTERNATIONAL FINANCIAL CONSUMER PROTECTION ORGANISATION (FINCONET)
+FCAC represents Canada as a member of FinCoNet , an international organization of supervisory authorities that have responsibility for financial consumer protection. FinCoNet members promote sound market conduct and strong consumer protection through efficient and effective financial market conduct supervision. FCAC contributes to advancing international cooperation, benchmarking and research into best practices in financial consumer protection.
+Participation in FinCoNet also enables FCAC to keep abreast of international developments and work together with global counterparts on common areas of interest, such as the financial consumer protection risks associated with rapid innovations in financial technology.
+G20-OECD TASK FORCE ON FINANCIAL CONSUMER PROTECTION
+FCAC, in cooperation with the Department of Finance, represents Canada on the G20-OECD Task Force on Financial Consumer Protection . FCAC actively supports the Task Force’s High-Level Principles on Financial Consumer Protection .
+The Principles set out the essential foundations of an effective and comprehensive framework for financial consumer protection. All G20 countries, OECD Members and Financial Stability Board jurisdictions have adopted the Principles, as well as many other countries. The Principles were updated in 2022 to address digitalization and sustainable finance developments, and support financial inclusion and well-being.
+OECD INTERNATIONAL NETWORK ON FINANCIAL EDUCATION
+FCAC represents Canada on the OECD International Network on Financial Education (OECD/INFE) and the INFE Advisory Board. OECD/INFE promotes and facilitates international co-operation between a broad range of financial regulators, policy makers and stakeholders with a responsibility for and interest in financial literacy and education.
+FCAC participates in various OECD/INFE working groups and work streams, including standard setting, implementation and evaluation, digital financial literacy, and financial literacy and sustainable finance.
+PAGE DETAILS
+FROM:
+Financial Consumer Agency of Canada

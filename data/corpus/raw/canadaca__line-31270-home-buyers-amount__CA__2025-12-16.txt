@@ -1,0 +1,53 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-31270-home-buyers-amount.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+LINE 31270 – HOME BUYERS' AMOUNT
+You can claim up to $10,000 for the purchase of a qualifying home in 2024 if you meet both of the following conditions:
+You (or your spouse or common-law partner) acquired a qualifying home
+You did not live in another home inside or outside Canada that you (or your spouse or common-law partner) owned in the year of acquisition or in any of the four preceding years (first-time home buyer) unless you are a person with a disability )
+When only one spouse (or common-law partner) meets all of the conditions to apply for the first-time home buyer's tax credit, only the spouse (or common-law partner) who qualifies for the credit can claim the home buyers' amount, regardless of the fact that the other spouse (or common-law partner) cannot.
+TOPICS
+Qualifying home
+Persons with disabilities
+Completing your tax return
+Supporting documents
+QUALIFYING HOME
+A qualifying home must be registered in your or your spouse's or common-law partner's name in accordance with the applicable land registration system and must be located in Canada. It includes existing homes and homes under construction.
+The following are considered qualifying homes:
+single-family houses
+semi-detached houses
+townhouses
+mobile homes
+condominium units
+apartments in duplexes, triplexes, fourplexes, or apartment buildings
+NOTE
+A share in a co-operative housing corporation that entitles you to own and gives you an equity interest in a housing unit located in Canada also qualifies. However, a share that only gives you the right to tenancy in the housing unit does not qualify.
+You must intend that you, or a related person with a disability, will occupy the home as a principal place of residence no later than one year after it is acquired.
+PERSONS WITH DISABILITIES
+You do not have to be a first-time home buyer if either :
+You are eligible for the disability tax credit
+You acquired the home for the benefit of a related person who is eligible for the disability tax credit
+NOTE
+The purchase must be made to allow the person with the disability to live in a home that is more accessible or better suited to their needs. For the purposes of the home buyers' amount, a person with a disability is a person who is eligible for the disability tax credit for the year that the home is acquired.
+You must intend that you, or a related person with a disability, will occupy the home as a principal place of residence no later than one year after it is acquired.
+COMPLETING YOUR TAX RETURN
+Enter $10,000 on line 31270 of your return if you are not splitting the amount with your spouse or common-law partner.
+SPLITTING THE CREDIT
+If more than one person is eligible for the first-time home buyers' tax credit for the acquisition of the same home, they can each claim part of the credit. The credit can be split between:
+eligible spouses or common-law partners
+any other eligible persons who jointly acquired the home
+The total of the amounts claimed by all eligible persons for the same home cannot be more than the credit amount for the year.
+SUPPORTING DOCUMENTS
+FILING ELECTRONICALLY OR A PAPER RETURN
+Keep all your documents in case the CRA asks to see them later.
+FORMS AND PUBLICATIONS
+Income Tax Package
+Form T2201, Disability Tax Credit Certificate
+RELATED TOPICS
+Line 31600 – Disability amount for self
+Homeowners
+PAGE DETAILS

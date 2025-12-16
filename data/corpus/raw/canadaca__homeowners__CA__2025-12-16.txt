@@ -1,0 +1,21 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/segments/homeowners.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+HOMEOWNERS
+The following topics provide tax guidance for homeowners.
+TOPICS
+Home buyers' amount Information on how to claim this non-refundable tax credit of up to $1,500
+GST/HST new housing rebate Information about the different GST/HST housing rebates available
+The Home Buyers' Plan (HBP) You can withdraw up to $60,000 from your RRSP to buy a qualifying home under the HBP
+Home accessibility expenses How to claim renovation expenses that improve access for persons with disabilities
+Rental income Information about calculating your rental income and how to claim any rebate available for new residential rental properties
+Selling your home Information about changing your address, selling your principal residence and moving expenses
+Provincial credits and grants you can claim on your tax return Information about British Columbia , Manitoba, New Brunswick, Ontario and Saskatchewan tax credits
+GOVERNMENT LINKS
+Canada Mortgage and Housing Corporation (CMHC)
+Natural Resources Canada: Energy Efficiency
+PAGE DETAILS

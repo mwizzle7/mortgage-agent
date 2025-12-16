@@ -1,0 +1,121 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/first-home-savings-account/opening-your-fhsas.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+OPENING YOUR FHSAS
+Find out who is eligible to open a first home savings account (FHSA) and how to open an account.
+ON THIS PAGE
+Who can open an FHSA
+How to open an FHSA
+Types of FHSAs
+WHO CAN OPEN AN FHSA
+To open an FHSA, you must be a qualifying individual by meeting all of the conditions below when you open your account.
+YOU MEET BOTH OF THE FOLLOWING AGE CONDITIONS
+You are 18 years of age or older if the legal age in your province is 19 years old In certain provinces and territories, the legal age at which an individual can enter into a contract (which includes opening an FHSA) is 19 years old.
+In certain provinces and territories, the legal age at which an individual can enter into a contract (which includes opening an FHSA) is 19 years old.
+You are 71 years or younger as of December 31 of the year you open your FHSA
+YOU MEET THE RESIDENCY CONDITION
+You are a resident of Canada Determining your residency status If you become a non-resident after opening an FHSA
+Determining your residency status
+If you become a non-resident after opening an FHSA
+YOU MEET BOTH OF THE FOLLOWING FIRST–TIME HOME BUYER CONDITIONS
+You are a first-time home buyer for the purpose of opening an FHSA if, when you open the account:
+You did not live in a qualifying home (or what would be a qualifying home if located in Canada) as your principal place of residence that you owned or jointly owned in this calendar year or in the previous 4 calendar years. What counts as a qualifying home A qualifying home is a housing unit located in Canada. This includes existing homes and those being constructed. Qualifies Single-family homes Semi-detached homes Townhouses Mobile homes Condominium units Apartments in duplexes, triplexes, fourplexes, or apartment buildings A share in a co-operative housing corporation that entitles you to own and gives you an equity interest in a housing unit Does not qualify A share that only provides you with a right to tenancy in the housing unit
+A qualifying home is a housing unit located in Canada. This includes existing homes and those being constructed.
+QUALIFIES
+Single-family homes
+Semi-detached homes
+Townhouses
+Mobile homes
+Condominium units
+Apartments in duplexes, triplexes, fourplexes, or apartment buildings
+A share in a co-operative housing corporation that entitles you to own and gives you an equity interest in a housing unit
+DOES NOT QUALIFY
+A share that only provides you with a right to tenancy in the housing unit
+One of the following is true: You did not live in a qualifying home (or what would be a qualifying home if located in Canada) as your principal place of residence that your spouse or common-law partner owned or jointly owned in this calendar year or in the previous 4 calendar years You do not have a spouse or common-law partner at the time you open the account
+You did not live in a qualifying home (or what would be a qualifying home if located in Canada) as your principal place of residence that your spouse or common-law partner owned or jointly owned in this calendar year or in the previous 4 calendar years
+You do not have a spouse or common-law partner at the time you open the account
+YOU NEED TO MEET ALL OF THE ABOVE CONDITIONS TO OPEN AN FHSA
+If you do not meet all of the conditions above, you are not a qualifying individual and cannot open an FHSA.
+Based on your selections above:
+YOU NEED TO MEET ALL OF THE ABOVE CONDITIONS TO OPEN AN FHSA
+If you do not meet all of the above conditions, you are not a qualifying individual and cannot open an FHSA.
+Based on your selections above:
+YOU QUALIFY TO OPEN AN FHSA
+If you meet all of the conditions above, you are a qualifying individual and can open an FHSA.
+You will not be permitted to open an FHSA after the end of your maximum participation period. For more information on your maximum participation period , go to When to close an FHSA .
+Bea is a Canadian resident who lives in a province where she is permitted to open an FHSA at the age of 18. Bea turns 18 on August 15, 2024 . She will not be able to open an FHSA until that date. Once Bea turns 18, she can open an FHSA if she meets all of the eligibility conditions. Once Bea opens an FHSA, she will be able to contribute to her FHSA or make transfers from her registered retirement savings plans (RRSPs) to her FHSA up to $8,000 in 2024.
+EXAMPLE 1
+Aysha is a Canadian resident who is 29 years old. Aysha would like to open an FHSA on May 9, 2024 . She became a joint owner of a home in 2020, which she used as her principal place of residence and sold in 2023. Aysha is not considered to be a first-time home buyer because she co–owned a home that was her principal place of residence during the period of time between January 1, 2020 and May 9, 2024 .
+As a result, Aysha is not a qualifying individual and will not be permitted to open an FHSA until at least 2028.
+EXAMPLE 2
+Carlos is a Canadian resident who is 34 years old. Carlos would like to open an FHSA in June 2024 . He currently lives with his common-law partner in a home that his common-law partner owns. Carlos is not considered to be a first-time home buyer because his current principal place of residence is owned by his common-law partner. As a result, Carlos is not a qualifying individual and will not be permitted to open an FHSA.
+HOW TO OPEN AN FHSA
+You can open one or more than one FHSA through an FHSA issuer, such as a bank, credit union, or a trust or insurance company. Your issuer will advise you on the types of FHSAs and the qualified investments they offer. For more information on the types of investments permitted in your FHSAs, go to Investments in your FHSAs .
+To open an FHSA, you must do the following:
+Contact your issuer
+CONTACT YOUR ISSUER
+Provide the issuer with the information they need to register your FHSA, including: your social insurance number your date of birth any supporting documents your issuer may need to certify that you are a qualifying individual
+PROVIDE THE ISSUER WITH THE INFORMATION THEY NEED TO REGISTER YOUR FHSA, INCLUDING:
+your social insurance number
+your date of birth
+any supporting documents your issuer may need to certify that you are a qualifying individual
+When you open your FHSAs, you may want to designate a beneficiary on your account. For more information, go to Types of beneficiaries .
+If you provide information to the issuer and it is subsequently determined that you provided incorrect information, it is possible that the registration of your FHSA may be revoked as far back as the date on which it was opened.
+The following will apply after the date of revocation:
+any contributions made to the account will not be tax-deductible
+any amounts transferred from your RRSPs to the account will be treated as an RRSP withdrawal and must be reported as income on your income tax and benefit return for the year of transfer
+any income earned under the account will not be tax-free and must be reported on your income tax and benefit return for the year it was earned
+FILE YOUR INCOME TAX AND BENEFIT RETURN
+You must fill out Schedule 15 - FHSA Contributions, Transfers and Activities when you file your income tax and benefit return for the year that you opened your first FHSA to let the CRA know that you opened an account, even if you did not contribute to your FHSAs or transfer property from your RRSPs to your FHSAs in that year. For more information on how to complete your Schedule 15, go to Reporting FHSA activities on your income tax and benefit return.
+Amalia is a Canadian resident who is 40 years old. Amalia has never owned a home. She is a qualifying individual and is permitted to open an FHSA.
+Amalia goes to her financial institution and opens her first FHSA in June 2024.
+Amalia does not make any contributions to her FHSA or transfers from her RRSP to her FHSA in 2024.
+When Amalia files her income tax and benefit return for 2024, she completes Schedule 15 - FHSA Contributions, Transfers and Activities to let the CRA know that she opened an FHSA in 2024, even though she did not have any activity in her FHSA in that year.
+TYPES OF FHSAS
+There are three types of FHSAs that can be offered:
+a depositary FHSA an account (with a financial institution) that holds money, term deposits, or guaranteed investment certificates (GICs)
+an account (with a financial institution) that holds money, term deposits, or guaranteed investment certificates (GICs)
+a trusteed FHSA a trust (with a trust company as trustee) that holds qualified investments such as money, term deposits, GICs, government and corporate bonds, mutual funds, and securities listed on a designated stock exchange
+a trust (with a trust company as trustee) that holds qualified investments such as money, term deposits, GICs, government and corporate bonds, mutual funds, and securities listed on a designated stock exchange
+an insured FHSA an annuity contract (with a licensed annuity provider)
+an annuity contract (with a licensed annuity provider)
+For information about a type of FHSA, contact an FHSA issuer.
+SELF-DIRECTED FHSA
+You can set up a self-directed FHSA if you prefer to build and manage your investment portfolio by buying and selling different types of qualified investments. For more information, contact an FHSA issuer.
+ADVANTAGE
+ALLOWABLE FHSA DEDUCTION
+ANNUAL FHSA LIMIT
+ANNUITANT
+COMMON-LAW PARTNER
+DESIGNATED AMOUNTS
+EXCESS FHSA AMOUNT
+EXEMPT PERIOD
+FAIR MARKET VALUE (FMV)
+FHSA CARRYFORWARD
+FHSA DEDUCTION
+FHSA PARTICIPATION ROOM
+FIRST-TIME HOME BUYER
+HOLDER
+ISSUER
+LIFETIME FHSA LIMIT
+MAXIMUM PARTICIPATION PERIOD
+NON-QUALIFIED INVESTMENT
+PROPERTY
+QUALIFIED DONEE
+QUALIFIED INVESTMENT
+QUALIFYING HOME
+QUALIFYING INDIVIDUAL
+QUALIFYING WITHDRAWAL
+REGISTERED RETIREMENT INCOME FUND (RRIF)
+REGISTERED RETIREMENT SAVING PLAN (RRSP)
+SPOUSE
+SUCCESSOR HOLDER
+SURVIVOR
+UNUSED FHSA CONTRIBUTIONS
+UNUSED FHSA PARTICIPATION ROOM
+UNUSED RRSP DEDUCTION ROOM
+PAGE DETAILS

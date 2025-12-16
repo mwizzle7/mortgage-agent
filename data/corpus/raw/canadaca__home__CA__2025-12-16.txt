@@ -1,0 +1,125 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/financial-consumer-agency/services/insurance/home.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+HOME INSURANCE
+ON THIS PAGE
+Understanding home insurance
+Condominium insurance
+Tenant’s insurance
+Insurance for a home-based business
+Home insurance coverage
+Home insurance premiums
+Home insurance settlement options
+Settling a claim if you have a mortgage
+UNDERSTANDING HOME INSURANCE
+Home insurance helps protect your home and your belongings in case of theft, loss or damage. It may also help cover additional living expenses if you're temporarily unable to live in your home. These may include living in a hotel or renting a home.
+Your home insurance may cover:
+damage or loss to your home
+damage, theft or loss of your personal possessions
+personal property stolen from your vehicle
+damage or injury to others who visit your home or property
+accidental damage you cause to somebody else’s property
+Insurance companies may refer to home insurance as property and casualty insurance. Property and casualty insurance also includes car insurance, business insurance and disaster insurance.
+WHO YOUR HOME INSURANCE POLICY COVERS
+Generally, your home insurance policy covers you and your family members.
+If you share your home or if you rent a part of it, you must inform your insurance company.
+Check with your insurance company, agent or broker to review who your policy covers.
+CONDOMINIUM INSURANCE
+Condominium (condo) insurance is different from home insurance. It covers damage or loss to the inside of your condo and your storage locker. It also covers personal liability claims for someone injured in your condo.
+Your condo corporation has an insurance policy that covers the outside structure of the building and its common areas.
+Condo insurance may pay for:
+damage to the inside structure of your condo
+damage to, or loss of, your belongings
+damage to improvements you, or the previous owners, made to your condo
+damage to other condos or common areas caused by an accident in your condo
+additional living expenses, up to a certain amount. For example, if you're temporarily unable to live in your condo because of a loss covered by your policy
+Review your condo insurance policy coverage and your condo’s corporation insurance policy coverage.
+TENANT’S INSURANCE
+You may want to consider buying tenant’s insurance if you live in an apartment or rent a home. Insurance companies may refer to it as renter’s insurance.
+You should have enough insurance to cover the cost of replacing everything in your home.
+Tenant’s insurance may pay for:
+damage to or loss of your possessions if you rent or lease your apartment or home from someone else
+personal property stolen from your vehicle
+accidental damage you cause to any part of the apartment building or home you're renting
+injury to visitors
+additional living expenses, within a certain limit. For example, if you're temporarily unable to live in your apartment because of a loss covered by your policy
+INSURANCE FOR A HOME-BASED BUSINESS
+Consider getting business insurance if you have a home-based business.
+Home insurance isn't business insurance. If you have a home-based business, you must notify your insurer. Using your home for purposes that your insurer isn't aware of may cancel your policy.
+Home insurance generally won't cover claims related to your home-based business. Your home insurance policy may provide limited coverage for damage or loss of business equipment. This coverage is only for the business equipment that is in your home. Business equipment may include computers and power tools. The limited coverage may not be enough to cover the cost of repairing or replacing your business equipment.
+Home insurance won't cover:
+equipment that is damaged while in your home, if used for business purposes
+stolen or damaged equipment while in your vehicle or outside of your home
+stolen or damaged tools while in your vehicle or outside of your home
+injury to a client while visiting your home, also known as personal liability
+Review your home insurance policy to confirm what coverage, if any, it will provide for a home-based business.
+Learn more about the types of business insurance coverage.
+HOME INSURANCE COVERAGE
+Make sure you understand what your home insurance covers. You should also understand what types of settlement to expect if you make a claim. Speak with your licensed insurance agent or registered insurance broker.
+TYPES OF HOME INSURANCE COVERAGE
+Coverage is the maximum amount of money your insurance company will pay you if you make a claim.
+For home insurance, you may need a combination of 2 types of coverage: personal property coverage and liability coverage.
+Personal property coverage protects you from loss or damage to:
+your home or personal possessions
+your car
+To figure out how much coverage you need, make a list of all your possessions with the following information:
+cost to replace the item (replacement value)
+make and model of your car
+serial number of your car
+pictures of your belongings
+receipts for major items
+This list might be useful if you need to make an insurance claim in the future.
+Liability coverage protects you against legal liability for losses caused by:
+injury to other people
+damage to the property of others
+Read your policy carefully before signing. Make sure you understand what your policy does and doesn’t cover.
+Ask your insurance agent or broker about anything you don't understand.
+Learn more about the types of home insurance coverage.
+WHAT YOUR HOME INSURANCE POLICY DOESN’T COVER
+Home insurance doesn’t cover predictable events and certain types of unexpected events.
+Your home insurance may cover certain types of unexpected events or accidents such as fire, windstorm, or theft. However, unexpected events such as earthquakes and floods are usually not covered. You may need to buy additional coverage for these types of events.
+Learn more about home insurance for unexpected events and disasters.
+Your insurance company doesn’t cover events that they consider predictable and related to the maintenance of your home. For example, suppose you're away for more than 4 days in a row when it's cold outside. Your home insurance may not cover damage to your home because of your pipes freezing.
+HOME INSURANCE PREMIUMS
+Premiums are the amount you pay to buy insurance.
+When determining how much you'll pay for premiums, insurance companies may consider factors like:
+the type of residence you live in, such as a single family home, semi-detached or condo
+characteristics of your residence, such as materials it’s made of, age, size, location, replacement value
+value of your property and contents they must insure
+the distance between your home and a fire hydrant or a fire station
+the crime rate in your neighbourhood
+your claims history
+the type of policy and coverage you selected
+the amount of your deductible
+A deductible is the amount of your claim that you agree to pay before your insurance company pays the rest.
+SHOP AROUND FOR THE LOWEST INSURANCE PREMIUMS
+Your premiums will vary from one insurance company to another. Shop around, ask for quotes and compare prices before deciding on one insurance company. In some cases, you may be eligible for a discount by combining both your home and car insurance.
+In certain provinces and territories, insurance companies may charge higher premiums based on your credit score.
+Learn how insurance works.
+HOME INSURANCE SETTLEMENT OPTIONS
+Your insurance company will review your claim and decide how it will settle it.
+When you make a claim, you're always responsible for paying the deductible. The amount of money you get from your insurance company will depend on your insurance benefits.
+ACTUAL CASH VALUE
+Actual cash value coverage gives you the cost of the item when it was new, minus depreciation. Depreciation is the loss of value due to the age and condition of the item. The depreciation depends on the item insured and the insurance company.
+For example, suppose a fire damages your computer. Your insurer will only cover the cost of your computer based on its reduced value at the time of the claim.
+REPLACEMENT VALUE
+Replacement value coverage gives you the actual cost to replace an item following a covered loss.
+For example, suppose a fire damaged your computer. You bought your computer 5 years ago for $2,000. Your insurer will cover the cost of buying a new computer of similar quality to the one you lost.
+SETTLING A CLAIM IF YOU HAVE A MORTGAGE
+If you have a mortgage, your home insurance policy will usually include a loss payee clause. A loss payee clause makes your mortgage lender your beneficiary. In case of loss or damage to your home, your insurance company will pay your lender (your beneficiary). They’ll pay up to the balance of your mortgage when you submit a claim.
+When you make a claim, your insurance company may, at their discretion, give the money to either:
+you, so you can fix your home when you submit a claim
+your lender, who would then give you the money for repairs or replacement after you submit receipts as proof
+RELATED LINKS
+Getting an insurance policy
+Buying a home
+Renting an apartment or house
+Making an insurance claim
+Making a complaint about your insurance company
+PAGE DETAILS
+FROM:
+Financial Consumer Agency of Canada

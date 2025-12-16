@@ -1,0 +1,92 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/what-home-buyers-plan/definitions-home-buyer-s-plan.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+DEFINITIONS FOR HOME BUYERS' PLAN
+For detailed information on how to participate in the Home Buyers' Plan (HBP), go to How to participate in the Home Buyers' Plan .
+Arm's length Refers to a relationship or a transaction between unrelated persons who act in their own separate interests. An arm's length transaction is generally a transaction that reflects ordinary commercial dealings between parties acting in their own separate interests. For more information, see Income Tax Folio S1-F5-C1, Related Persons and Dealing at Arm's Length .
+Refers to a relationship or a transaction between unrelated persons who act in their own separate interests. An arm's length transaction is generally a transaction that reflects ordinary commercial dealings between parties acting in their own separate interests.
+For more information, see Income Tax Folio S1-F5-C1, Related Persons and Dealing at Arm's Length .
+Common–law partner A person who is not your spouse, with whom you are living in a conjugal relationship, and to whom at least one of the following situations applies. The person: has been living with you in a conjugal relationship and this current relationship has lasted at least 12 continuous months In this definition, “12 continuous months” includes any period you were separated for less than 90 days because of a breakdown in the relationship. is the parent of your child by birth or adoption has custody and control of your child (or had custody and control immediately before the child turned 19 years of age) and your child is wholly dependent on that person for support
+A person who is not your spouse, with whom you are living in a conjugal relationship, and to whom at least one of the following situations applies. The person:
+has been living with you in a conjugal relationship and this current relationship has lasted at least 12 continuous months In this definition, “12 continuous months” includes any period you were separated for less than 90 days because of a breakdown in the relationship.
+has been living with you in a conjugal relationship and this current relationship has lasted at least 12 continuous months
+In this definition, “12 continuous months” includes any period you were separated for less than 90 days because of a breakdown in the relationship.
+is the parent of your child by birth or adoption
+is the parent of your child by birth or adoption
+has custody and control of your child (or had custody and control immediately before the child turned 19 years of age) and your child is wholly dependent on that person for support
+has custody and control of your child (or had custody and control immediately before the child turned 19 years of age) and your child is wholly dependent on that person for support
+Eligible withdrawal This is the amount you withdraw from your RRSP which meets all the Home Buyers’ Plan (HBP) conditions that apply to your situation.
+First-time home buyer First-time home buyer – you will be considered to be a first-time home buyer if you did not, at any time in the current calendar year before the withdrawal (except the 30 days immediately before the withdrawal) or at any time in the preceding four calendar years , live in a qualifying home (or what would be a qualifying home if located in Canada) as your principal place of residence that either you owned or jointly-owned, or your current spouse or common-law partner (at the time of the withdrawal) owned or jointly-owned. For example, if you are making a withdrawal on July 31, 2025, the period is from January 1, 2021 to June 30, 2025.
+First-time home buyer – you will be considered to be a first-time home buyer if you did not, at any time in the current calendar year before the withdrawal (except the 30 days immediately before the withdrawal) or at any time in the preceding four calendar years , live in a qualifying home (or what would be a qualifying home if located in Canada) as your principal place of residence that either you owned or jointly-owned, or your current spouse or common-law partner (at the time of the withdrawal) owned or jointly-owned. For example, if you are making a withdrawal on July 31, 2025, the period is from January 1, 2021 to June 30, 2025.
+HBP balance Your HBP balance, at any time, is the total of all eligible withdrawals you made from your RRSPs minus the total of all amounts you designated as an HBP repayment and amounts included in your income because your HBP repayments were not repaid to your RRSPs, PRPPs, and SPP in previous years.
+Your HBP balance, at any time, is the total of all eligible withdrawals you made from your RRSPs minus the total of all amounts you designated as an HBP repayment and amounts included in your income because your HBP repayments were not repaid to your RRSPs, PRPPs, and SPP in previous years.
+HBP statement Your HBP statement shows your remaining balance to repay, and your minimum required repayment for the next year.
+Non-arm’s length Generally refers to a relationship or transaction between persons who are related to each other. However, a non-arm's length relationship might also exist between unrelated individuals, partnerships or corporations, depending on the circumstances. For more information, see the definition of Arm’s length .
+Generally refers to a relationship or transaction between persons who are related to each other. However, a non-arm's length relationship might also exist between unrelated individuals, partnerships or corporations, depending on the circumstances. For more information, see the definition of Arm’s length .
+Participant You are considered an HBP participant if: you make an eligible withdrawal from your RRSP to buy or build a qualifying home for yourself you make an eligible withdrawal from your RRSP to buy or build a qualifying home for a related person with a disability or to help such a person buy or build a qualifying home you are the spouse or common-law partner of a deceased HBP participant and you have elected to continue making the repayments of the deceased participant
+You are considered an HBP participant if:
+you make an eligible withdrawal from your RRSP to buy or build a qualifying home for yourself
+you make an eligible withdrawal from your RRSP to buy or build a qualifying home for yourself
+you make an eligible withdrawal from your RRSP to buy or build a qualifying home for a related person with a disability or to help such a person buy or build a qualifying home
+you make an eligible withdrawal from your RRSP to buy or build a qualifying home for a related person with a disability or to help such a person buy or build a qualifying home
+you are the spouse or common-law partner of a deceased HBP participant and you have elected to continue making the repayments of the deceased participant
+you are the spouse or common-law partner of a deceased HBP participant and you have elected to continue making the repayments of the deceased participant
+Participation period Your HBP participation period starts on January 1 of the year you make your first eligible withdrawal from your RRSP and ends at the end of the year your HBP balance is reduced to zero.
+Your HBP participation period starts on January 1 of the year you make your first eligible withdrawal from your RRSP and ends at the end of the year your HBP balance is reduced to zero.
+Pooled registered pension plan (PRPP) A retirement savings plan to which you or your employer or both can contribute. Any income earned in a PRPP is usually exempt from tax as long as it remains in the plan.
+Qualifying home A housing unit located in Canada. This includes existing homes and those being constructed. The following all qualify: single-family homes semi-detached homes townhouses mobile homes apartments in: duplexes triplexes fourplexes apartment buildings condominium units A share in a co-operative housing corporation that entitles you to possess, and gives you an equity interest in a housing unit located in Canada, also qualifies. For condominium units, you are considered to own the unit the day you are entitled to immediate vacant possession of it. Right to tenancy A share that only provides you with a right to tenancy in the housing unit does not qualify.
+A housing unit located in Canada. This includes existing homes and those being constructed.
+The following all qualify:
+single-family homes
+semi-detached homes
+townhouses
+mobile homes
+apartments in: duplexes triplexes fourplexes
+duplexes
+triplexes
+fourplexes
+apartment buildings
+condominium units
+A share in a co-operative housing corporation that entitles you to possess, and gives you an equity interest in a housing unit located in Canada, also qualifies.
+For condominium units, you are considered to own the unit the day you are entitled to immediate vacant possession of it.
+Right to tenancy
+A share that only provides you with a right to tenancy in the housing unit does not qualify.
+Related persons Are not considered to deal with each other at arm's length . Related persons include individuals connected by blood relationship, marriage, common-law partnership or adoption (legal or in fact). A corporation and another person or two corporations may also be related persons. For more information, see Income Tax Folio S1-F5-C1, Related Persons and Dealing at Arm's Length .
+Are not considered to deal with each other at arm's length . Related persons include individuals connected by blood relationship, marriage, common-law partnership or adoption (legal or in fact). A corporation and another person or two corporations may also be related persons.
+For more information, see Income Tax Folio S1-F5-C1, Related Persons and Dealing at Arm's Length .
+Replacement property For a particular qualifying home means any other qualifying home where: the specified disabled person agreed to acquire, or begin the construction of the other qualifying home after the latest time that you made a withdrawal in respect of the particular qualifying home you intend to use the other qualifying home as a principal place of residence within one year after its acquisition neither you or your spouse or common-law partner, or the specified disabled person or their spouse or common-law partner previously acquired the other qualifying home
+For a particular qualifying home means any other qualifying home where:
+the specified disabled person agreed to acquire, or begin the construction of the other qualifying home after the latest time that you made a withdrawal in respect of the particular qualifying home
+the specified disabled person agreed to acquire, or begin the construction of the other qualifying home after the latest time that you made a withdrawal in respect of the particular qualifying home
+you intend to use the other qualifying home as a principal place of residence within one year after its acquisition
+you intend to use the other qualifying home as a principal place of residence within one year after its acquisition
+neither you or your spouse or common-law partner, or the specified disabled person or their spouse or common-law partner previously acquired the other qualifying home
+neither you or your spouse or common-law partner, or the specified disabled person or their spouse or common-law partner previously acquired the other qualifying home
+Resident of Canada For more information about residency status, see Determining your residency status or call 1-800-959-8281 (toll free within Canada and the United States), or 613-940-8495 (from outside Canada and the United States). The CRA accepts collect calls by automated response. You may hear a beep and experience a normal connection delay.
+RRSP deduction limit The maximum amount you can deduct from contributions you made to your RRSP, PRPP, or SPP and to your spouse’s or common-law partner’s RRSP or SPP for a year (excluding transfers to your RRSPs or for certain types of qualifying income). The calculation is based, in part, on your earned income in the previous year. Pension adjustments (PAs), past service pension adjustments (PSPAs), pension adjustment reversals (PARs), prescribed amount for connected persons, and your unused RRSP deduction room at the end of the previous year are also used to calculate the limit.
+Specified disabled person In respect of an individual, is a person who is the individual or who is related to the individual, where the person either: is entitled to the disability amount (line 31600 of their income tax and benefit return) at the time of the HBP withdrawal. would have been entitled to the disability amount if they had not claimed costs for an attendant or for care in a nursing home as medical expenses. was not entitled to the disability amount for any year before the HBP withdrawal, but a Form T2201, Disability Tax Credit Certificate , certified by a medical practitioner, is filed for the person for the year of the HBP withdrawal, the person will be treated as if they are entitled to the disability amount. If Form T2201 is not approved, your withdrawals will not be considered eligible withdrawals under the HBP, and will have to be included in your income for the year you receive them
+In respect of an individual, is a person who is the individual or who is related to the individual, where the person either:
+is entitled to the disability amount (line 31600 of their income tax and benefit return) at the time of the HBP withdrawal.
+is entitled to the disability amount (line 31600 of their income tax and benefit return) at the time of the HBP withdrawal.
+would have been entitled to the disability amount if they had not claimed costs for an attendant or for care in a nursing home as medical expenses.
+would have been entitled to the disability amount if they had not claimed costs for an attendant or for care in a nursing home as medical expenses.
+was not entitled to the disability amount for any year before the HBP withdrawal, but a Form T2201, Disability Tax Credit Certificate , certified by a medical practitioner, is filed for the person for the year of the HBP withdrawal, the person will be treated as if they are entitled to the disability amount. If Form T2201 is not approved, your withdrawals will not be considered eligible withdrawals under the HBP, and will have to be included in your income for the year you receive them
+was not entitled to the disability amount for any year before the HBP withdrawal, but a Form T2201, Disability Tax Credit Certificate , certified by a medical practitioner, is filed for the person for the year of the HBP withdrawal, the person will be treated as if they are entitled to the disability amount.
+If Form T2201 is not approved, your withdrawals will not be considered eligible withdrawals under the HBP, and will have to be included in your income for the year you receive them
+Specified pension plan (SPP) A pension plan or similar arrangement that has been prescribed under the Income Tax Regulations as a “specified pension plan” for purposes of the Income Tax Act. Many of the rules related to RRSPs also apply to SPPs.
+Spouse A person to whom you are legally married.
+Unrelated persons May not be dealing with each other at arm’s length at a particular time. Each case will depend upon its own facts. The following criteria will generally be used to determine if the parties to a transaction are not dealing at arm's length: whether there is a common mind that directs the bargaining for the parties to a transaction whether the parties to a transaction act in concert without separate interests; ("acting in concert" means, for example, that parties act with considerable interdependence on a transaction of common interest) whether there is de facto control of one party by the other because of, for example, advantage, authority or influence For more information, see Income Tax Folio S1–F5–C1, Related Persons and Dealing at Arm's Length.
+whether there is a common mind that directs the bargaining for the parties to a transaction
+whether there is a common mind that directs the bargaining for the parties to a transaction
+whether the parties to a transaction act in concert without separate interests; ("acting in concert" means, for example, that parties act with considerable interdependence on a transaction of common interest)
+whether the parties to a transaction act in concert without separate interests; ("acting in concert" means, for example, that parties act with considerable interdependence on a transaction of common interest)
+whether there is de facto control of one party by the other because of, for example, advantage, authority or influence
+whether there is de facto control of one party by the other because of, for example, advantage, authority or influence
+For more information, see Income Tax Folio S1–F5–C1, Related Persons and Dealing at Arm's Length.
+Written agreement A written agreement must include the date the agreement was signed, the address of the qualifying home and the closing date.
+A written agreement must include the date the agreement was signed, the address of the qualifying home and the closing date.
+PAGE DETAILS

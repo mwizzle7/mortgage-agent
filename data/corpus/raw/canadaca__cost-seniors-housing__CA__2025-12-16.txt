@@ -1,0 +1,54 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/financial-consumer-agency/services/retirement-planning/cost-seniors-housing.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+HOUSING OPTIONS FOR SENIORS
+ON THIS PAGE
+Housing needs as a senior
+Average cost of senior housing
+Senior housing programs in Canada
+Staying in your home as a senior
+HOUSING NEEDS AS A SENIOR
+Your housing needs may change as you enter your senior years. You may need help with household chores or you may need nursing care as you age.
+There are many types of housing options available to you depending on your needs. Example of housing scenarios may include:
+staying in your own home and have in-home assistance
+living with family members or friends
+living in a retirement community
+living in a retirement home with meals and care provided
+The cost of housing depends on what level of service and care you need. Typically, the more services and care you have, the more expensive it will be.
+AVERAGE COST OF SENIOR HOUSING
+The Canadian Mortgage and Housing Corporation (CMHC) released the Senior Housing Survey in 2021. CMHC looked at the cost of standard spaces. That’s where the resident doesn’t receive high-level (defined as 1.5 hours or more of care per day). The average rent for standard spaces was on average $3,075 per month. This monthly cost varies across Canada.
+Learn more about the cost of senior housing in your province or territory.
+SENIOR HOUSING PROGRAMS IN CANADA
+Senior housing costs and programs vary by province and territory. If you're a senior with a low income, there may be programs to help you get affordable housing.
+Learn more about senior housing programs and resources available in your province or territory:
+Alberta , Seniors, services and information
+British Columbia , Seniors, Housing
+Manitoba , Aging in place
+New Brunswick , Seniors and healthy again
+Newfoundland and Labrador , Seniors and Aging Division
+Nova Scotia , Department of Seniors and long term care
+Northwest Territories, Housing programs and services
+Nunavut , Housing Corporation
+Ontario , Seniors: find a place to live
+Prince Edward Island , Seniors
+Quebec , Programs and Services for Seniors
+Saskatchewan , Seniors Services
+Yukon , Housing and property
+STAYING IN YOUR HOME AS A SENIOR
+If you’re thinking about staying in your home, also called aging in place, consider budgeting for small adjustments to it. To be autonomous, you may have to keep your home up to date and adapt it to your needs as you age.
+Learn more about accessible and adaptable housing for seniors.
+Some provinces and territories have programs, benefits or tax credits for seniors who are making changes to their homes to make them more accessible.
+Find out what benefits are available in your province or territory with the Benefits Finder.
+First Nations or First Nation members living on reserve can apply for funding to make home adaptations for seniors.
+Learn more about the Home Adaptions for Seniors’ Independence Program.
+RELATED LINKS
+What every older Canadian should know about: Planning for their future housing needs
+Thinking about aging in place
+Programs and services for seniors
+PAGE DETAILS
+FROM:
+Financial Consumer Agency of Canada

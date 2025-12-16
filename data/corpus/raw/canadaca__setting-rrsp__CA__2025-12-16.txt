@@ -1,0 +1,15 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/setting-rrsp.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+SETTING UP AN RRSP
+You set up a registered retirement savings plan through a financial institution such as a bank, credit union, trust or insurance company. Your financial institution will advise you on the types of RRSP and the investments they can contain.
+You may want to set up a spousal or common-law partner RRSP . This type of plan can help ensure that retirement income is more evenly split between both of you. The benefit is greatest if a higher-income spouse or common-law partner contributes to an RRSP for a lower-income spouse or common-law partner. The contributor receives the short term benefit of the tax deduction for the contributions and the annuitant, who is likely to be in a lower tax bracket during retirement, receives the income and reports it on their income tax and benefits return
+You may want to set up a self-directed RRSP if you prefer to build and manage your own investment portfolio by buying and selling a variety of different types of investments. For more information on eligible investments, refer to Self-directed RRSPs . If you are considering this type of RRSP, be sure to consult with your financial institution.
+You make your RRSP contributions directly to the RRSP issuer. For more information, refer to Contributing to an RRSP, PRPP, or SPP .
+FORMS AND PUBLICATIONS
+Guide T4040, RRSPs and Other Registered Plans for Retirement
+PAGE DETAILS

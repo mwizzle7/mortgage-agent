@@ -1,0 +1,20 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/rental-income/you-have-rental-income-business-income.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+RENTAL INCOME OR BUSINESS INCOME
+To determine whether your rental income is from property or business, consider the number and types of services you provide for your tenants.
+In most cases, you are earning an income from your property if you rent space and provide basic services only. Basic services include heat, light, parking and laundry facilities.
+If you provide additional services to tenants, such as cleaning, security and meals, you may be carrying on a business. The more services you provide, the greater the chance that your rental operation is a business.
+For more information about how to determine if your rental income comes from property or a business, go to Interpretation Bulletin IT-434, Rental of Real Property by Individual , and Interpretation Bulletin IT-434SR, Rental of Real Property by Individual .
+NOTE
+If you determine that your rental operation is a business, go to Sole proprietorships and partnerships . You can use Form T2125 and the Guide T4002 to calculate your business income and expenses.
+FORMS AND PUBLICATIONS
+Guide T4002, Self-employed Business, Professional, Commission, Farming, and Fishing Income
+Guide T4036, Rental Income
+Form T2125, Statement of Business or Professional Activities
+Form T776, Statement of Real Estate Rentals
+PAGE DETAILS

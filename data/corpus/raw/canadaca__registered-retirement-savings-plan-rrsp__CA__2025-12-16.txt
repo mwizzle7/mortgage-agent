@@ -1,0 +1,22 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/rrsps-related-plans/registered-retirement-savings-plan-rrsp.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+REGISTERED RETIREMENT SAVINGS PLAN (RRSP)
+An RRSP is a retirement savings plan that you establish, that the CRA registers, and to which you or your spouse or common-law partner contribute. Deductible RRSP contributions can be used to reduce your tax.
+Any income you earn in the RRSP is usually exempt from tax as long as the funds remain in the plan. You generally have to pay tax when you receive payments from the plan.
+TOPICS
+Setting up an RRSP How to set up an RRSP
+Contributing to an RRSP, PRPP or SPP Making contributions to an RRSP, PRPP or SPP for you or for your spouse or common-law partner and claiming the deduction
+Transferring Retiring allowances, lump-sum payments, transfer of property, commutation payments
+Making withdrawals Withdrawing funds from an RRSP and the tax implications
+Receiving income from an RRSP Getting and reporting income from an RRSP
+Death of an RRSP annuitant Tax implications when the annuitant of an RRSP dies
+Anti-avoidance rules for RRSPs and RRIFs Anti-avoidance rules are strengthened to prevent aggressive tax planning
+RRSP tax-free withdrawal schemes Questions and answers
+RELATED LINKS
+Tax Alert
+PAGE DETAILS

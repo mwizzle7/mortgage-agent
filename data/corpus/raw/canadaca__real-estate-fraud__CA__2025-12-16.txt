@@ -1,0 +1,54 @@
+SOURCE_NAME: Canada.ca
+SOURCE_URL: https://www.canada.ca/en/financial-consumer-agency/services/real-estate-fraud.html
+JURISDICTION: CA
+RETRIEVED_DATE: 2025-12-16
+CONTENT_TYPE: extracted
+---
+
+REAL ESTATE FRAUD
+ON THIS PAGE
+How real estate fraud happens
+Protecting yourself from real estate fraud
+If you're a victim of real estate fraud
+Real estate fraud may cause you large financial losses. If you’re a victim of real estate fraud, you may find out that you no longer own your home. You may also notice additional mortgages on your credit reports.
+HOW REAL ESTATE FRAUD HAPPENS
+There are different types of real estate fraud that may result in financial loss.
+TITLE FRAUD
+Title fraud happens when fraudsters steal the title to your home. They sell your home or apply for a new mortgage against it. Title fraud usually starts with identity theft, which may happen if someone steals your personal information.
+Learn more about identity theft and fraud .
+FORECLOSURE FRAUD
+Foreclosure fraud usually happens when you're having problems making your mortgage payments. Fraudsters may try to trick you into transferring them your property title in exchange for a loan. Fraudsters usually keep the payments you make and possess the title to your home. They may then resell or refinance your house.
+MORTGAGE FRAUD
+Mortgage fraud, also called application fraud, happens when you provide false information on a mortgage application. Someone else may try to falsify your documents or encourage you to do so. When that happens, you may be held responsible for committing mortgage fraud. It may also impact your ability to obtain credit or a mortgage in the future.
+Learn more about mortgage fraud .
+PROTECTING YOURSELF FROM REAL ESTATE FRAUD
+Protect yourself against real estate fraud:
+when you apply for a mortgage, deal with licensed or accredited mortgage and real estate professionals
+fully read any documents before signing them
+keep your mortgage information in a safe place
+shred old documents rather than throwing them in the trash
+contact your mortgage lender first if you’re having trouble making your mortgage payments
+consult your lawyer or notary before giving another person a right to deal with your home or other assets
+research any company or individual who offers you a loan
+do a land title search with your provincial or territorial land registry office. It will show the name of the property owner and any mortgages or liens registered on the title
+consider buying title insurance to protect yourself against losses from title fraud
+IF YOU'RE A VICTIM OF REAL ESTATE FRAUD
+If you think you’re a victim of real estate fraud:
+write down when you noticed the fraud and the actions you took. Include the names of the people you spoke to and dates of communications
+contact your financial institutions and any other companies where you think accounts may be affected
+file a report with your local police
+contact your provincial or territorial land registry office
+contact Canada’s 2 main credit bureaus and ask them to put a fraud alert on your credit report: TransUnion Equifax
+TransUnion
+Equifax
+REPORT THE FRAUD TO THE NATIONAL FRAUD REPORTING SYSTEM
+If you’ve been a victim of fraud or cybercrime, report it to the National Fraud Reporting System. This centralized system is jointly managed by the Royal Canadian Mounted Police and the Canadian Anti-Fraud Centre. It helps law enforcement agencies across Canada track and investigate fraudulent activities.
+Report cybercrime and fraud .
+RELATED LINKS
+Protecting your financial information in the event of a data breach
+Social Insurance Number: Protecting your SIN
+Debit card fraud
+Credit card fraud
+PAGE DETAILS
+FROM:
+Financial Consumer Agency of Canada

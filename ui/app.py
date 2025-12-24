@@ -544,14 +544,14 @@ def main() -> None:
     with header_cols[1]:
         if st.button("Clear", key="clear_quickstart"):
             st.session_state["question_input"] = ""
-            st.experimental_rerun()
+            st.rerun()
 
     cols = st.columns(2)
     for idx, sample_question in enumerate(QUICK_START_QUESTIONS):
         target_col = cols[idx % len(cols)]
         if target_col.button(sample_question, key=f"quick_question_{idx}"):
             st.session_state["question_input"] = sample_question
-            st.experimental_rerun()
+            st.rerun()
 
     st.subheader("Conversation")
     if st.button("Clear chat"):

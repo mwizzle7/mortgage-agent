@@ -4,7 +4,7 @@ import re
 from typing import Dict, Iterable, List
 
 
-_CITATION_PATTERN = re.compile(r"\[(S\d+)\]")
+_CITATION_PATTERN = re.compile(r"\[([A-Za-z]\d+)\]")
 
 
 def extract_source_citations(text: str) -> List[str]:
@@ -13,7 +13,7 @@ def extract_source_citations(text: str) -> List[str]:
     seen: set[str] = set()
     ordered: List[str] = []
     for match in _CITATION_PATTERN.finditer(text):
-        citation_id = match.group(1)
+        citation_id = match.group(1).upper()
         if citation_id not in seen:
             seen.add(citation_id)
             ordered.append(citation_id)
@@ -42,7 +42,7 @@ def enforce_grounding(
     citations_required: bool,
     strict: bool,
 ) -> Dict:
-    allowed_set = set(allowed or [])
+    allowed_set = {cid.upper() for cid in (allowed or []) if cid}
     extracted_ordered = extract_source_citations(text)
     extracted_set = set(extracted_ordered)
     payload: Dict = {

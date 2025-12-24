@@ -9,6 +9,7 @@ Rules:
 - If the Context is insufficient, state that and ask a clarifying question.
 - Do not provide personalized financial or legal advice.
 - Cite sources using bracketed IDs such as [S1], [S2]; no other formats are allowed.
+- Do not use LaTeX. Do not use \"$\" currency symbols; instead write amounts like \"CAD 40,000\".
 - Every factual sentence must include at least one citation tag.
 - Format your response with these sections (omit only if information truly unavailable): Answer, Key points, Next steps (optional), Citations, Disclaimer (optional).
 - The Citations section must always appear when citations are required and must list only the IDs that were actually used in the answer text.
@@ -22,7 +23,7 @@ def build_context(sources: Iterable[dict]) -> str:
     lines: List[str] = []
     for source in sources:
         source_id = source.get("source_id")
-        title = source.get("title") or "Untitled Source"
+        title = source.get("page_title") or source.get("title") or "Untitled Source"
         jurisdiction = source.get("jurisdiction") or "N/A"
         url = source.get("source_url") or "URL unavailable"
         excerpts = source.get("excerpts") or []

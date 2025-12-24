@@ -72,9 +72,11 @@ def _build_doc_metadata(metadata: Dict[str, str], file_path: Path) -> Dict[str, 
     return {
         "source_name": metadata.get("source_name") or "unknown",
         "source_url": metadata.get("source_url") or None,
+        "source_domain": metadata.get("source_domain") or None,
         "jurisdiction": metadata.get("jurisdiction") or "",
         "retrieved_date": retrieved_date,
         "content_type": metadata.get("content_type") or "extracted",
+        "page_title": metadata.get("page_title") or "",
         "title_fallback": slug_title or "Untitled Document",
     }
 
@@ -108,18 +110,20 @@ def ingest_txt_corpus() -> dict:
         body_text = "\n".join(body_lines).strip()
 
         doc_id = str(uuid.uuid4())
-        title = _derive_title(body_lines, doc_fields["title_fallback"])
+        title = doc_fields.get("page_title") or _derive_title(body_lines, doc_fields["title_fallback"])
 
         cur.execute(
             """
-            INSERT INTO documents (doc_id, title, source_name, source_url, jurisdiction, published_date, retrieved_date, corpus_version, content_type, is_approved)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO documents (doc_id, title, page_title, source_name, source_url, source_domain, jurisdiction, published_date, retrieved_date, corpus_version, content_type, is_approved)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 doc_id,
                 title,
+                doc_fields.get("page_title") or None,
                 doc_fields["source_name"],
                 doc_fields["source_url"],
+                doc_fields.get("source_domain"),
                 doc_fields["jurisdiction"],
                 None,
                 doc_fields["retrieved_date"],

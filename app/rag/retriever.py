@@ -24,7 +24,7 @@ def _normalize(vec: np.ndarray) -> np.ndarray:
 def _fetch_chunk_metadata(cur: sqlite3.Cursor, embedding_index: int) -> Optional[Dict[str, Any]]:
     cur.execute(
         """
-        SELECT c.chunk_id, c.text, c.doc_id, d.title, d.jurisdiction, d.source_url, d.source_name
+        SELECT c.chunk_id, c.text, c.doc_id, d.title, d.page_title, d.jurisdiction, d.source_url, d.source_name, d.source_domain
         FROM chunks c
         JOIN documents d ON c.doc_id = d.doc_id
         WHERE c.embedding_index = ?
@@ -39,9 +39,11 @@ def _fetch_chunk_metadata(cur: sqlite3.Cursor, embedding_index: int) -> Optional
         "text": row[1],
         "doc_id": row[2],
         "title": row[3],
-        "jurisdiction": row[4] or "",
-        "source_url": row[5],
-        "source_name": row[6],
+        "page_title": row[4],
+        "jurisdiction": row[5] or "",
+        "source_url": row[6],
+        "source_name": row[7],
+        "source_domain": row[8],
     }
 
 
@@ -88,10 +90,12 @@ def retrieve(query: str, top_k: Optional[int] = None) -> Dict[str, Any]:
                 "doc_id": meta["doc_id"],
                 "score": float(score),
                 "title": meta["title"],
+                "page_title": meta.get("page_title"),
                 "jurisdiction": meta["jurisdiction"],
                 "text": meta["text"],
                 "source_url": meta.get("source_url"),
                 "source_name": meta.get("source_name"),
+                "source_domain": meta.get("source_domain"),
             }
         )
 
@@ -108,8 +112,10 @@ def retrieve(query: str, top_k: Optional[int] = None) -> Dict[str, Any]:
                 "source_url": chunk.get("source_url"),
                 "doc_id": chunk["doc_id"],
                 "title": chunk.get("title") or "Untitled Source",
+                "page_title": chunk.get("page_title"),
                 "jurisdiction": chunk.get("jurisdiction") or "",
                 "source_name": chunk.get("source_name"),
+                "source_domain": chunk.get("source_domain"),
                 "chunks": [],
                 "best_score": chunk["score"],
                 "first_rank": rank,
@@ -140,8 +146,10 @@ def retrieve(query: str, top_k: Optional[int] = None) -> Dict[str, Any]:
             {
                 "source_id": f"S{idx}",
                 "source_url": group["source_url"],
+                "source_domain": group.get("source_domain"),
                 "source_name": group.get("source_name"),
                 "title": group["title"],
+                "page_title": group.get("page_title"),
                 "jurisdiction": group["jurisdiction"],
                 "score": group["best_score"],
                 "doc_id": group["doc_id"],

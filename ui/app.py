@@ -1,12 +1,44 @@
 from __future__ import annotations
 
+import json
+import os
+import re
 import uuid
 from typing import Any, Dict, List, Sequence
 
 import requests
 import streamlit as st
 
-DEFAULT_API_BASE = "http://127.0.0.1:8000"
+
+def _secret_value(key: str) -> str | None:
+    try:
+        secrets = st.secrets
+    except Exception:  # pragma: no cover - Streamlit secrets not available
+        return None
+    return secrets.get(key)
+
+
+def _resolve_api_base_default() -> str:
+    secret_val = _secret_value("API_BASE_URL")
+    if secret_val:
+        return secret_val.strip()
+    env_val = os.getenv("API_BASE_URL")
+    if env_val:
+        return env_val.strip()
+    return "http://127.0.0.1:8000"
+
+
+def _resolve_public_mode() -> bool:
+    raw = _secret_value("PUBLIC_UI")
+    if raw is None:
+        raw = os.getenv("PUBLIC_UI")
+    if raw is None:
+        return False
+    return str(raw).strip().lower() in ("1", "true", "yes", "y", "on")
+
+
+DEFAULT_API_BASE = _resolve_api_base_default()
+PUBLIC_UI = _resolve_public_mode()
 REQUEST_TIMEOUT = 60
 
 
@@ -54,6 +86,8 @@ def _ensure_state() -> None:
     state.setdefault("health_data", None)
     state.setdefault("auto_rotate_session", False)
     state.setdefault("show_raw_json", False)
+    state.setdefault("clear_question_input", False)
+    state.setdefault("public_ui", PUBLIC_UI)
 
 
 def _extract_from_health(data: Dict[str, Any] | None, paths: Sequence[Sequence[str]]) -> Any:
@@ -72,63 +106,26 @@ def _extract_from_health(data: Dict[str, Any] | None, paths: Sequence[Sequence[s
 
 
 def render_sidebar() -> tuple[str, str, str, bool]:
-    st.sidebar.header("API configuration")
-    api_input = st.sidebar.text_input("API Base URL", value=st.session_state["api_base_url"])
-    api_base = api_input.strip() or DEFAULT_API_BASE
-    st.session_state["api_base_url"] = api_base
-
-    if st.sidebar.button("Check health"):
-        ok, payload, _, raw_text, err = call_api("GET", "/health", api_base)
-        if ok and isinstance(payload, dict):
-            st.session_state["health_data"] = payload
-            st.sidebar.success("Health check succeeded")
-        elif ok:
-            st.sidebar.warning("Health endpoint did not return JSON")
-            st.sidebar.code(raw_text)
-        else:
-            st.sidebar.error(f"Health check failed: {err or 'Unknown error'}")
-
-    if st.sidebar.button("Run ingestion"):
-        ok, payload, _, raw_text, err = call_api("POST", "/admin/ingest", api_base)
-        if ok:
-            st.sidebar.success("Ingestion started")
-            if isinstance(payload, (dict, list)):
-                st.sidebar.json(payload)
-            else:
-                st.sidebar.code(raw_text)
-        else:
-            st.sidebar.error(f"Ingestion failed: {err or 'Unknown error'}")
-            if isinstance(payload, (dict, list)):
-                st.sidebar.json(payload)
-            elif raw_text:
-                st.sidebar.code(raw_text)
+    sidebar = st.sidebar
+    sidebar.title("Mortgage Agent")
+    sidebar.caption("Configure your session or open the advanced tools for diagnostics.")
 
     health = st.session_state.get("health_data")
-    if isinstance(health, dict):
-        st.sidebar.markdown("**Environment**")
-        env_rows = {
-            "Strict grounding": health.get("strict_grounding"),
-            "Citations required": health.get("citations_required"),
-            "Embedding model": health.get("embedding_model"),
-            "Corpus version": health.get("corpus_version"),
-        }
-        for label, value in env_rows.items():
-            st.sidebar.write(f"{label}: {value if value is not None else 'n/a'}")
 
-    st.sidebar.header("Identity & limits")
-    user_id_input = st.sidebar.text_input("user_id", value=st.session_state["user_id"])
+    sidebar.subheader("Session identity")
+    user_id_input = sidebar.text_input("user_id", value=st.session_state["user_id"])
     if user_id_input.strip():
         st.session_state["user_id"] = user_id_input.strip()
-    if st.sidebar.button("New user_id"):
+    if sidebar.button("New user_id"):
         st.session_state["user_id"] = _random_id("user")
-        st.experimental_rerun()
+        st.rerun()
 
-    session_id_input = st.sidebar.text_input("session_id", value=st.session_state["session_id"])
+    session_id_input = sidebar.text_input("session_id", value=st.session_state["session_id"])
     if session_id_input.strip():
         st.session_state["session_id"] = session_id_input.strip()
-    if st.sidebar.button("New session_id"):
+    if sidebar.button("New session_id"):
         st.session_state["session_id"] = _random_id("session")
-        st.experimental_rerun()
+        st.rerun()
 
     question_limit_day = _extract_from_health(
         health,
@@ -143,21 +140,77 @@ def render_sidebar() -> tuple[str, str, str, bool]:
         (("limits", "character_limit"), ("CHARACTER_LIMIT_PER_QUESTION",), ("character_limit_per_question",)),
     )
 
-    st.sidebar.write(f"Daily question limit: {question_limit_day if question_limit_day is not None else 'n/a'}")
-    st.sidebar.write(f"Session question limit: {question_limit_session if question_limit_session is not None else 'n/a'}")
-    st.sidebar.write(f"Character limit: {char_limit if char_limit is not None else 'n/a'}")
+    sidebar.markdown("### Limits")
+    sidebar.write(f"Daily question limit: {question_limit_day if question_limit_day is not None else 'n/a'}")
+    sidebar.write(f"Session question limit: {question_limit_session if question_limit_session is not None else 'n/a'}")
+    sidebar.write(f"Character limit: {char_limit if char_limit is not None else 'n/a'}")
 
-    auto_rotate = st.sidebar.checkbox(
+    auto_rotate = sidebar.toggle(
         "Auto-rotate session_id after each question",
         value=st.session_state.get("auto_rotate_session", False),
     )
     st.session_state["auto_rotate_session"] = auto_rotate
 
-    show_raw = st.sidebar.checkbox(
-        "Show raw JSON",
-        value=st.session_state.get("show_raw_json", False),
-    )
-    st.session_state["show_raw_json"] = show_raw
+    show_raw = st.session_state.get("show_raw_json", False)
+    if not PUBLIC_UI:
+        show_raw = sidebar.toggle(
+            "Show raw JSON for each answer",
+            value=show_raw,
+        )
+        st.session_state["show_raw_json"] = show_raw
+    else:
+        show_raw = False
+        st.session_state["show_raw_json"] = False
+
+    if not PUBLIC_UI:
+        with sidebar.expander("Developer tools", expanded=False):
+            api_input = st.text_input("API Base URL", value=st.session_state["api_base_url"])
+            api_base = api_input.strip() or DEFAULT_API_BASE
+            st.session_state["api_base_url"] = api_base
+
+            col_health, col_ingest = st.columns(2)
+            if col_health.button("Check health"):
+                ok, payload, _, raw_text, err = call_api("GET", "/health", api_base)
+                if ok and isinstance(payload, dict):
+                    st.session_state["health_data"] = payload
+                    st.success("Health check succeeded")
+                elif ok:
+                    st.warning("Health endpoint did not return JSON")
+                    st.code(raw_text)
+                else:
+                    st.error(f"Health check failed: {err or 'Unknown error'}")
+
+            if col_ingest.button("Run ingestion"):
+                ok, payload, _, raw_text, err = call_api("POST", "/admin/ingest", api_base)
+                if ok:
+                    st.success("Ingestion started")
+                    if isinstance(payload, (dict, list)):
+                        st.json(payload)
+                    else:
+                        st.code(raw_text)
+                else:
+                    st.error(f"Ingestion failed: {err or 'Unknown error'}")
+                    if isinstance(payload, (dict, list)):
+                        st.json(payload)
+                    elif raw_text:
+                        st.code(raw_text)
+
+            health = st.session_state.get("health_data")
+            if isinstance(health, dict):
+                st.markdown("**Environment snapshot**")
+                env_rows = {
+                    "Strict grounding": health.get("strict_grounding"),
+                    "Citations required": health.get("citations_required"),
+                    "Embedding model": health.get("embedding_model"),
+                    "Corpus version": health.get("corpus_version"),
+                }
+                for label, value in env_rows.items():
+                    st.write(f"{label}: {value if value is not None else 'n/a'}")
+    else:
+        api_base = st.session_state["api_base_url"] = st.session_state.get("api_base_url", DEFAULT_API_BASE)
+        sidebar.caption(f"API endpoint: {api_base}")
+
+    api_base = st.session_state["api_base_url"]
 
     return api_base, st.session_state["user_id"], st.session_state["session_id"], show_raw
 
@@ -179,46 +232,132 @@ def _extract_citations(payload: Any) -> list[dict[str, Any]]:
     return []
 
 
+_DOLLAR_PATTERN = re.compile(r"(?<!\\)\$")
+_BACKTICK_PATTERN = re.compile(r"(?<!\\)`")
+
+
+def sanitize_for_streamlit_md(text: str) -> str:
+    if not text:
+        return ""
+    sanitized = _DOLLAR_PATTERN.sub(r"\\$", text)
+    sanitized = _BACKTICK_PATTERN.sub(r"\\`", sanitized)
+    return sanitized
+
+
 def _append_history(entry: Dict[str, Any]) -> None:
     st.session_state.chat_history.append(entry)
 
 
-def _render_history(show_raw: bool) -> None:
+def _store_feedback_summary(request_id: str, helpful: bool, comment: str | None) -> None:
+    summary = json.dumps(
+        {
+            "request_id": request_id,
+            "helpful": helpful,
+            "comment": comment or "",
+        },
+        indent=2,
+    )
+    st.session_state[f"feedback_done_{request_id}"] = True
+    st.session_state[f"feedback_summary_{request_id}"] = summary
+
+
+def _submit_feedback(entry: Dict[str, Any], helpful: bool, comment: str | None, api_base: str, user_id: str, session_id: str) -> None:
+    request_id = entry.get("request_id")
+    if not request_id:
+        st.error("Unable to send feedback: missing request_id.")
+        return
+    payload = {
+        "request_id": request_id,
+        "user_id": entry.get("user_id") or user_id,
+        "session_id": entry.get("session_id") or session_id,
+        "question": entry.get("question") or "",
+        "helpful": helpful,
+        "comment": (comment or "").strip() or None,
+    }
+    ok, response_payload, status_code, raw_text, err = call_api("POST", "/feedback", api_base, json=payload)
+    if ok:
+        st.success("Thanks — feedback received.")
+        _store_feedback_summary(request_id, helpful, payload["comment"] or "")
+        summary = st.session_state.get(f"feedback_summary_{request_id}")
+        if summary:
+            st.code(summary)
+    else:
+        message = err or f"HTTP {status_code or '???'}"
+        st.error(f"Unable to send feedback: {message}")
+        if isinstance(response_payload, (dict, list)):
+            st.json(response_payload)
+        elif raw_text:
+            st.code(raw_text)
+
+
+def _render_history(api_base: str, user_id: str, session_id: str, show_raw: bool) -> None:
     history: List[Dict[str, Any]] = st.session_state.get("chat_history", [])
     if not history:
         st.info("No questions asked yet.")
         return
 
-    for idx, item in enumerate(history, start=1):
-        with st.container():
-            st.markdown(f"**You:** {item['question']}")
+    for idx, item in enumerate(history):
+        with st.chat_message("user"):
+            st.markdown(sanitize_for_streamlit_md(item["question"]))
+        with st.chat_message("assistant"):
             if item.get("error"):
                 st.error(item["error"])
             else:
-                st.markdown(f"**Answer:** {item.get('answer') or 'No answer returned.'}")
+                st.markdown(sanitize_for_streamlit_md(item.get("answer") or "No answer returned."))
                 citations = item.get("citations") or []
                 with st.expander("Citations", expanded=False):
                     if not citations:
                         st.write("No citations returned.")
                     else:
-                        for c_idx, citation in enumerate(citations, start=1):
-                            doc_id = citation.get("id") or citation.get("doc_id") or citation.get("document_id")
-                            title = citation.get("title") or citation.get("document_title")
-                            jurisdiction = citation.get("jurisdiction") or citation.get("scope")
-                            score = citation.get("score") or citation.get("similarity")
-                            st.markdown(
-                                f"**Citation {c_idx}:** ID `{doc_id or 'n/a'}` · Title: {title or 'n/a'} · "
-                                f"Jurisdiction: {jurisdiction or 'n/a'} · Score: {score if score is not None else 'n/a'}"
+                        for source in citations:
+                            source_id = source.get("id") or source.get("source_id") or "S?"
+                            title = (
+                                source.get("page_title")
+                                or source.get("title")
+                                or source.get("document_title")
+                                or "Untitled Source"
                             )
-                            preview = citation.get("preview") or citation.get("text") or citation.get("chunk")
-                            st.code(preview or "No preview available.")
+                            jurisdiction = source.get("jurisdiction") or source.get("scope") or "N/A"
+                            url = source.get("url") or source.get("source_url")
+                            domain = source.get("source_domain") or source.get("domain")
+                            suffix = f"{jurisdiction}"
+                            if domain:
+                                suffix = f"{suffix}, {domain}"
+                            line = f"- **{source_id}** · {title} ({suffix})"
+                            if url:
+                                line += f" — [{url}]({url})"
+                            st.markdown(sanitize_for_streamlit_md(line))
+                request_id = item.get("request_id") or f"turn_{idx}"
+                st.markdown("**Feedback**")
+                feedback_done = st.session_state.get(f"feedback_done_{request_id}")
+                if feedback_done:
+                    st.success("Feedback already submitted. Thank you!")
+                    summary = st.session_state.get(f"feedback_summary_{request_id}")
+                    if summary:
+                        st.code(summary)
+                else:
+                    choice_key = f"feedback_choice_{request_id}"
+                    comment_key = f"feedback_comment_{request_id}"
+                    options = ["Select...", "Helpful", "Not helpful"]
+                    selection = st.selectbox(
+                        "How was this answer?",
+                        options,
+                        key=choice_key,
+                        index=0,
+                    )
+                    comment = st.text_area("What was missing or wrong?", key=comment_key, height=100)
+                    if st.button("Send feedback", key=f"send_feedback_{request_id}"):
+                        if selection == "Select...":
+                            st.warning("Please select whether the answer was helpful.")
+                        else:
+                            helpful = selection == "Helpful"
+                            _submit_feedback(item, helpful, comment, api_base, user_id, session_id)
             if show_raw:
                 raw_payload = item.get("raw_payload")
                 if isinstance(raw_payload, (dict, list)):
                     st.json(raw_payload)
                 elif item.get("raw_text"):
                     st.code(item["raw_text"])
-        st.divider()
 
 
 def _send_question(question: str, api_base: str, user_id: str, session_id: str) -> None:
@@ -235,6 +374,9 @@ def _send_question(question: str, api_base: str, user_id: str, session_id: str) 
                 "citations": citations,
                 "raw_payload": response_payload,
                 "raw_text": raw_text,
+                "request_id": response_payload.get("request_id"),
+                "session_id": response_payload.get("session_id") or session_id,
+                "user_id": user_id,
             }
         )
         if st.session_state.get("auto_rotate_session"):
@@ -257,30 +399,39 @@ def _send_question(question: str, api_base: str, user_id: str, session_id: str) 
 def main() -> None:
     st.set_page_config(page_title="Mortgage Agent Test UI", layout="wide")
     _ensure_state()
+    if st.session_state.get("clear_question_input"):
+        st.session_state["question_input"] = ""
+        st.session_state["clear_question_input"] = False
 
     api_base, user_id, session_id, show_raw = render_sidebar()
 
     st.title("Mortgage Agent Test UI")
     st.caption("Interact with the local API, inspect citations, and debug responses without leaving your browser.")
+    if PUBLIC_UI:
+        st.info(
+            "Answers are grounded in vetted Canadian mortgage sources. "
+            "This beta is informational only and is not financial advice or a substitute for professional guidance."
+        )
 
     st.subheader("Conversation")
     if st.button("Clear chat"):
         st.session_state["chat_history"] = []
-        st.success("Chat history cleared.")
+        st.rerun()
 
-    _render_history(show_raw)
+    _render_history(api_base, user_id, session_id, show_raw)
 
     st.subheader("Ask a question")
-    with st.form("question_form", clear_on_submit=True):
-        question = st.text_area("Question", key="question_input", height=150)
-        submitted = st.form_submit_button("Ask", type="primary")
-
-    if submitted:
+    question_key = "question_input"
+    question = st.text_area("Question", key=question_key, height=150)
+    ask_disabled = not question.strip()
+    if st.button("Ask", type="primary", disabled=ask_disabled):
         cleaned_question = question.strip()
-        if cleaned_question:
-            _send_question(cleaned_question, api_base, user_id, session_id)
-        else:
+        if not cleaned_question:
             st.warning("Please enter a question before submitting.")
+        else:
+            _send_question(cleaned_question, api_base, user_id, session_id)
+            st.session_state["clear_question_input"] = True
+            st.rerun()
 
 
 if __name__ == "__main__":

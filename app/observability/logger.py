@@ -63,8 +63,10 @@ def init_db(db_path: str) -> None:
     CREATE TABLE IF NOT EXISTS documents (
         doc_id TEXT PRIMARY KEY,
         title TEXT NOT NULL,
+        page_title TEXT,
         source_name TEXT NOT NULL,
         source_url TEXT,
+        source_domain TEXT,
         jurisdiction TEXT,
         published_date TEXT,
         retrieved_date TEXT NOT NULL,
@@ -75,6 +77,8 @@ def init_db(db_path: str) -> None:
     """
     )
     _ensure_column(cur, "documents", "content_type", "TEXT")
+    _ensure_column(cur, "documents", "page_title", "TEXT")
+    _ensure_column(cur, "documents", "source_domain", "TEXT")
 
     cur.execute(
         """

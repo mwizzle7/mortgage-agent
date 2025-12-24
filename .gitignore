@@ -29,6 +29,11 @@ data/logs/
 # Indexes and generated corpora
 data/indexes/
 data/corpus/processed/
+data/corpus/raw/
+data/corpus/tmp/
+data/corpus/cache/
+*.faiss
+*.index
 
 # OS and editor noise
 .DS_Store

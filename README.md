@@ -82,6 +82,11 @@ For frequently changing sources (OSFI, CRA program details), re-fetch these pack
    - Optional overrides: `LLM_MODEL`, `EMBEDDING_MODEL`, `STRICT_GROUNDING`, `CITATIONS_REQUIRED`
 3. The service automatically mounts a persistent `/data` disk (FAISS index, corpus, and SQLite logs are stored there). No ingestion runs automatically on startup—trigger `/admin/ingest` after you upload corpus files.
 4. After deploy, verify the API with `curl https://<your-service>.onrender.com/health`.
+5. On a fresh Render disk, populate the corpus and ingest with one command:
+   ```
+   curl -X POST https://<your-service>.onrender.com/admin/fetch_and_ingest -H "X-Admin-Token: <token>"
+   ```
+   (Running `/admin/ingest` alone will return 0 docs until the corpus is fetched.)
 
 ## Deploying the Streamlit UI
 
@@ -101,6 +106,7 @@ For frequently changing sources (OSFI, CRA program details), re-fetch these pack
 2. From your laptop, upload/refresh corpus packs and POST `/admin/ingest` with the admin token:
    `curl -X POST https://<your-render-service>.onrender.com/admin/ingest -H "X-Admin-Token: <token>"`.
 3. Open the Streamlit UI (either locally or on Streamlit Cloud) and ask a question such as “What is the OSFI stress test for uninsured mortgages?”—confirm you get an answer plus citations.
+4. When refreshing the corpus on Render, rerun the fetch + ingest endpoint and re-ask a question to confirm the new content is available.
 
 ## Environment Configuration
 

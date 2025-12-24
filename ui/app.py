@@ -42,6 +42,17 @@ DEFAULT_API_BASE = _resolve_api_base_default()
 PUBLIC_UI = _resolve_public_mode()
 REQUEST_TIMEOUT = 60
 
+QUICK_START_QUESTIONS = [
+    "What is the OSFI stress test for uninsured mortgages?",
+    "What is the minimum down payment for a $750,000 home in Canada?",
+    "What is an FHSA and who is eligible?",
+    "What is the Home Buyers’ Plan (HBP) and how does repayment work?",
+    "What closing costs should I budget for when buying a home?",
+    "What is CMHC mortgage loan insurance and when do I need it?",
+    "What happens if I break my mortgage early?",
+    "What does 'mortgage pre-approval' mean in Canada?",
+]
+
 CUSTOM_CSS = """
 <style>
     body {
@@ -100,6 +111,13 @@ CUSTOM_CSS = """
 </style>
 """
 
+PUBLIC_HIDE_SIDEBAR_CSS = """
+<style>
+  section[data-testid="stSidebar"] { display: none; }
+  div[data-testid="collapsedControl"] { display: none; }
+</style>
+"""
+
 
 def _random_id(prefix: str) -> str:
     return f"{prefix}-{uuid.uuid4().hex[:8]}"
@@ -146,6 +164,7 @@ def _ensure_state() -> None:
     state.setdefault("auto_rotate_session", False)
     state.setdefault("show_raw_json", False)
     state.setdefault("clear_question_input", False)
+    state.setdefault("question_input", "")
     state.setdefault("public_ui", PUBLIC_UI)
 
 
@@ -486,14 +505,23 @@ def _send_question(question: str, api_base: str, user_id: str, session_id: str) 
 
 
 def main() -> None:
-    st.set_page_config(page_title="Mortgage Agent Test UI", layout="wide")
+    st.set_page_config(page_title="Mortgage Agent", layout="wide", initial_sidebar_state="collapsed")
     st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
+    if PUBLIC_UI:
+        st.markdown(PUBLIC_HIDE_SIDEBAR_CSS, unsafe_allow_html=True)
     _ensure_state()
     if st.session_state.get("clear_question_input"):
         st.session_state["question_input"] = ""
         st.session_state["clear_question_input"] = False
 
-    api_base, user_id, session_id, show_raw = render_sidebar()
+    if PUBLIC_UI:
+        api_base = DEFAULT_API_BASE
+        st.session_state["api_base_url"] = api_base
+        user_id = st.session_state["user_id"]
+        session_id = st.session_state["session_id"]
+        show_raw = False
+    else:
+        api_base, user_id, session_id, show_raw = render_sidebar()
 
     st.markdown(
         """
@@ -509,6 +537,21 @@ def main() -> None:
             "Answers are grounded in vetted Canadian mortgage sources. "
             "This beta is informational only and is not financial advice or a substitute for professional guidance."
         )
+
+    header_cols = st.columns([5, 1])
+    with header_cols[0]:
+        st.subheader("Try these")
+    with header_cols[1]:
+        if st.button("Clear", key="clear_quickstart"):
+            st.session_state["question_input"] = ""
+            st.experimental_rerun()
+
+    cols = st.columns(2)
+    for idx, sample_question in enumerate(QUICK_START_QUESTIONS):
+        target_col = cols[idx % len(cols)]
+        if target_col.button(sample_question, key=f"quick_question_{idx}"):
+            st.session_state["question_input"] = sample_question
+            st.experimental_rerun()
 
     st.subheader("Conversation")
     if st.button("Clear chat"):

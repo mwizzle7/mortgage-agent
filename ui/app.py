@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import json
 import os
 import re
@@ -40,6 +41,64 @@ def _resolve_public_mode() -> bool:
 DEFAULT_API_BASE = _resolve_api_base_default()
 PUBLIC_UI = _resolve_public_mode()
 REQUEST_TIMEOUT = 60
+
+CUSTOM_CSS = """
+<style>
+    body {
+        background-color: #f5f7fb;
+    }
+    .main-header {
+        background: white;
+        padding: 1.2rem 1.5rem;
+        border-radius: 12px;
+        border: 1px solid #e1e4eb;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 6px rgba(24, 39, 75, 0.05);
+    }
+    .main-header h1 {
+        margin-bottom: 0.4rem;
+    }
+    .user-message,
+    .assistant-message {
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border: 1px solid #e3e6ef;
+        box-shadow: 0 1px 3px rgba(24, 39, 75, 0.06);
+    }
+    .user-message {
+        border-left: 4px solid #4a90e2;
+    }
+    .assistant-message {
+        border-left: 4px solid #57b59a;
+    }
+    .assistant-message.error {
+        border-left-color: #e25858;
+        background: #fff6f6;
+    }
+    .message-label {
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+        color: #606378;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+    .source-citation {
+        border-left: 3px solid #d1d8f2;
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 0.5rem;
+        background: #f8faff;
+        border-radius: 6px;
+    }
+    .source-citation:last-child {
+        margin-bottom: 0;
+    }
+    .source-citation a {
+        color: #3a6ed8;
+    }
+</style>
+"""
 
 
 def _random_id(prefix: str) -> str:
@@ -244,6 +303,12 @@ def sanitize_for_streamlit_md(text: str) -> str:
     return sanitized
 
 
+def _format_text_html(text: str) -> str:
+    sanitized = sanitize_for_streamlit_md(text)
+    escaped = html.escape(sanitized)
+    return escaped.replace("\n", "<br>")
+
+
 def _append_history(entry: Dict[str, Any]) -> None:
     st.session_state.chat_history.append(entry)
 
@@ -295,69 +360,93 @@ def _render_history(api_base: str, user_id: str, session_id: str, show_raw: bool
     if not history:
         st.info("No questions asked yet.")
         return
-
     for idx, item in enumerate(history):
-        with st.chat_message("user"):
-            st.markdown(sanitize_for_streamlit_md(item["question"]))
-        with st.chat_message("assistant"):
-            if item.get("error"):
-                st.error(item["error"])
-            else:
-                st.markdown(sanitize_for_streamlit_md(item.get("answer") or "No answer returned."))
-                citations = item.get("citations") or []
-                with st.expander("Citations", expanded=False):
-                    if not citations:
-                        st.write("No citations returned.")
-                    else:
-                        for source in citations:
-                            source_id = source.get("id") or source.get("source_id") or "S?"
-                            title = (
-                                source.get("page_title")
-                                or source.get("title")
-                                or source.get("document_title")
-                                or "Untitled Source"
-                            )
-                            jurisdiction = source.get("jurisdiction") or source.get("scope") or "N/A"
-                            url = source.get("url") or source.get("source_url")
-                            domain = source.get("source_domain") or source.get("domain")
-                            suffix = f"{jurisdiction}"
-                            if domain:
-                                suffix = f"{suffix}, {domain}"
-                            line = f"- **{source_id}** · {title} ({suffix})"
-                            if url:
-                                line += f" — [{url}]({url})"
-                            st.markdown(sanitize_for_streamlit_md(line))
-                request_id = item.get("request_id") or f"turn_{idx}"
-                st.markdown("**Feedback**")
-                feedback_done = st.session_state.get(f"feedback_done_{request_id}")
-                if feedback_done:
-                    st.success("Feedback already submitted. Thank you!")
-                    summary = st.session_state.get(f"feedback_summary_{request_id}")
-                    if summary:
-                        st.code(summary)
+        user_html = f"""
+        <div class="user-message">
+            <div class="message-label">You</div>
+            <div class="message-text">{_format_text_html(item["question"])}</div>
+        </div>
+        """
+        st.markdown(user_html, unsafe_allow_html=True)
+
+        error_text = item.get("error")
+        if error_text:
+            assistant_html = f"""
+            <div class="assistant-message error">
+                <div class="message-label">Assistant</div>
+                <div class="message-text">{_format_text_html(error_text)}</div>
+            </div>
+            """
+            st.markdown(assistant_html, unsafe_allow_html=True)
+        else:
+            answer_html = f"""
+            <div class="assistant-message">
+                <div class="message-label">Assistant</div>
+                <div class="message-text">{_format_text_html(item.get("answer") or "No answer returned.")}</div>
+            </div>
+            """
+            st.markdown(answer_html, unsafe_allow_html=True)
+            citations = item.get("citations") or []
+            with st.expander("Citations", expanded=False):
+                if not citations:
+                    st.write("No citations returned.")
                 else:
-                    choice_key = f"feedback_choice_{request_id}"
-                    comment_key = f"feedback_comment_{request_id}"
-                    options = ["Select...", "Helpful", "Not helpful"]
-                    selection = st.selectbox(
-                        "How was this answer?",
-                        options,
-                        key=choice_key,
-                        index=0,
-                    )
-                    comment = st.text_area("What was missing or wrong?", key=comment_key, height=100)
-                    if st.button("Send feedback", key=f"send_feedback_{request_id}"):
-                        if selection == "Select...":
-                            st.warning("Please select whether the answer was helpful.")
-                        else:
-                            helpful = selection == "Helpful"
-                            _submit_feedback(item, helpful, comment, api_base, user_id, session_id)
-            if show_raw:
-                raw_payload = item.get("raw_payload")
-                if isinstance(raw_payload, (dict, list)):
-                    st.json(raw_payload)
-                elif item.get("raw_text"):
-                    st.code(item["raw_text"])
+                    for source in citations:
+                        source_id = source.get("id") or source.get("source_id") or "S?"
+                        title = (
+                            source.get("page_title")
+                            or source.get("title")
+                            or source.get("document_title")
+                            or "Untitled Source"
+                        )
+                        jurisdiction = source.get("jurisdiction") or source.get("scope") or "N/A"
+                        url = source.get("url") or source.get("source_url")
+                        domain = source.get("source_domain") or source.get("domain")
+                        suffix = jurisdiction
+                        if domain:
+                            suffix = f"{suffix}, {domain}"
+                        safe_title = _format_text_html(title)
+                        safe_suffix = _format_text_html(suffix)
+                        safe_id = html.escape(str(source_id))
+                        safe_url = html.escape(url, quote=True) if url else ""
+                        link_html = f' — <a href="{safe_url}" target="_blank" rel="noopener">{safe_url}</a>' if safe_url else ""
+                        citation_html = f"""
+                        <div class="source-citation">
+                            <strong>{safe_id}</strong> · {safe_title} ({safe_suffix}){link_html}
+                        </div>
+                        """
+                        st.markdown(citation_html, unsafe_allow_html=True)
+            request_id = item.get("request_id") or f"turn_{idx}"
+            st.markdown("**Feedback**")
+            feedback_done = st.session_state.get(f"feedback_done_{request_id}")
+            if feedback_done:
+                st.success("Feedback already submitted. Thank you!")
+                summary = st.session_state.get(f"feedback_summary_{request_id}")
+                if summary:
+                    st.code(summary)
+            else:
+                choice_key = f"feedback_choice_{request_id}"
+                comment_key = f"feedback_comment_{request_id}"
+                options = ["Select...", "Helpful", "Not helpful"]
+                selection = st.selectbox(
+                    "How was this answer?",
+                    options,
+                    key=choice_key,
+                    index=0,
+                )
+                comment = st.text_area("What was missing or wrong?", key=comment_key, height=100)
+                if st.button("Send feedback", key=f"send_feedback_{request_id}"):
+                    if selection == "Select...":
+                        st.warning("Please select whether the answer was helpful.")
+                    else:
+                        helpful = selection == "Helpful"
+                        _submit_feedback(item, helpful, comment, api_base, user_id, session_id)
+        if show_raw:
+            raw_payload = item.get("raw_payload")
+            if isinstance(raw_payload, (dict, list)):
+                st.json(raw_payload)
+            elif item.get("raw_text"):
+                st.code(item["raw_text"])
 
 
 def _send_question(question: str, api_base: str, user_id: str, session_id: str) -> None:
@@ -398,6 +487,7 @@ def _send_question(question: str, api_base: str, user_id: str, session_id: str) 
 
 def main() -> None:
     st.set_page_config(page_title="Mortgage Agent Test UI", layout="wide")
+    st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
     _ensure_state()
     if st.session_state.get("clear_question_input"):
         st.session_state["question_input"] = ""
@@ -405,8 +495,15 @@ def main() -> None:
 
     api_base, user_id, session_id, show_raw = render_sidebar()
 
-    st.title("Mortgage Agent Test UI")
-    st.caption("Interact with the local API, inspect citations, and debug responses without leaving your browser.")
+    st.markdown(
+        """
+        <div class="main-header">
+          <h1>Mortgage Agent</h1>
+          <p>Grounded answers backed by official Canadian sources (beta).</p>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     if PUBLIC_UI:
         st.info(
             "Answers are grounded in vetted Canadian mortgage sources. "

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import html
-import json
 import os
 import re
 import uuid
@@ -332,23 +331,22 @@ def _append_history(entry: Dict[str, Any]) -> None:
     st.session_state.chat_history.append(entry)
 
 
-def _store_feedback_summary(request_id: str, helpful: bool, comment: str | None) -> None:
-    summary = json.dumps(
-        {
-            "request_id": request_id,
-            "helpful": helpful,
-            "comment": comment or "",
-        },
-        indent=2,
-    )
-    st.session_state[f"feedback_done_{request_id}"] = True
-    st.session_state[f"feedback_summary_{request_id}"] = summary
+def _set_feedback_state(request_id: str, status: str, message: str | None = None) -> None:
+    st.session_state[f"feedback_status_{request_id}"] = status
+    if message is not None:
+        st.session_state[f"feedback_message_{request_id}"] = message
 
 
-def _submit_feedback(entry: Dict[str, Any], helpful: bool, comment: str | None, api_base: str, user_id: str, session_id: str) -> None:
-    request_id = entry.get("request_id")
+def _get_feedback_state(request_id: str) -> tuple[str, str | None]:
+    status = st.session_state.get(f"feedback_status_{request_id}", "idle")
+    message = st.session_state.get(f"feedback_message_{request_id}")
+    return status, message
+
+
+def _submit_feedback(entry: Dict[str, Any], helpful: bool, comment: str | None, api_base: str, user_id: str, session_id: str, request_id: str | None = None) -> None:
+    request_id = request_id or entry.get("request_id")
     if not request_id:
-        st.error("Unable to send feedback: missing request_id.")
+        st.error("Couldn't send feedback. Please try again.")
         return
     payload = {
         "request_id": request_id,
@@ -358,20 +356,14 @@ def _submit_feedback(entry: Dict[str, Any], helpful: bool, comment: str | None, 
         "helpful": helpful,
         "comment": (comment or "").strip() or None,
     }
-    ok, response_payload, status_code, raw_text, err = call_api("POST", "/feedback", api_base, json=payload)
+    ok, _, status_code, raw_text, err = call_api("POST", "/feedback", api_base, json=payload)
     if ok:
-        st.success("Thanks — feedback received.")
-        _store_feedback_summary(request_id, helpful, payload["comment"] or "")
-        summary = st.session_state.get(f"feedback_summary_{request_id}")
-        if summary:
-            st.code(summary)
+        _set_feedback_state(request_id, "success", "Thanks — feedback received.")
     else:
-        message = err or f"HTTP {status_code or '???'}"
-        st.error(f"Unable to send feedback: {message}")
-        if isinstance(response_payload, (dict, list)):
-            st.json(response_payload)
-        elif raw_text:
-            st.code(raw_text)
+        fallback_message = "Couldn't send feedback. Please try again."
+        _set_feedback_state(request_id, "error", fallback_message)
+        if not PUBLIC_UI:
+            print(f"Feedback submission failed: status={status_code}, error={err}, body={raw_text}")
 
 
 def _render_history(api_base: str, user_id: str, session_id: str, show_raw: bool) -> None:
@@ -437,13 +429,12 @@ def _render_history(api_base: str, user_id: str, session_id: str, show_raw: bool
                         st.markdown(citation_html, unsafe_allow_html=True)
             request_id = item.get("request_id") or f"turn_{idx}"
             st.markdown("**Feedback**")
-            feedback_done = st.session_state.get(f"feedback_done_{request_id}")
-            if feedback_done:
-                st.success("Feedback already submitted. Thank you!")
-                summary = st.session_state.get(f"feedback_summary_{request_id}")
-                if summary:
-                    st.code(summary)
+            status, message = _get_feedback_state(request_id)
+            if status == "success":
+                st.success(message or "Thanks — feedback received.")
             else:
+                if status == "error":
+                    st.error(message or "Couldn't send feedback. Please try again.")
                 choice_key = f"feedback_choice_{request_id}"
                 comment_key = f"feedback_comment_{request_id}"
                 options = ["Select...", "Helpful", "Not helpful"]
@@ -459,7 +450,8 @@ def _render_history(api_base: str, user_id: str, session_id: str, show_raw: bool
                         st.warning("Please select whether the answer was helpful.")
                     else:
                         helpful = selection == "Helpful"
-                        _submit_feedback(item, helpful, comment, api_base, user_id, session_id)
+                        _submit_feedback(item, helpful, comment, api_base, user_id, session_id, request_id=request_id)
+                        st.rerun()
         if show_raw:
             raw_payload = item.get("raw_payload")
             if isinstance(raw_payload, (dict, list)):

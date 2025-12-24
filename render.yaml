@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: mortgage-agent-api
+    env: docker
+    plan: starter
+    healthCheckPath: /health
+    autoDeploy: true
+    disk:
+      name: mortgage-agent-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: LLM_MODEL
+        sync: false
+      - key: EMBEDDING_MODEL
+        sync: false
+      - key: STRICT_GROUNDING
+        value: "true"
+      - key: CITATIONS_REQUIRED
+        value: "true"

@@ -40,6 +40,17 @@ STOP_CONTAINS = [
     "report a problem on this page",
     "page details",
     "share this page",
+    "save",
+    "share",
+    "print",
+    "back to top",
+    "on this page",
+    "skip to main content",
+    "contact us",
+    "terms and conditions",
+    "privacy",
+    "feedback",
+    "social media",
 ]
 
 
@@ -89,7 +100,60 @@ def _select_content_root(soup: BeautifulSoup):
 
 
 def _should_skip_line(text_lower: str) -> bool:
-    return any(stop in text_lower for stop in STOP_CONTAINS)
+    if any(stop in text_lower for stop in STOP_CONTAINS):
+        return True
+    stripped = text_lower.strip()
+    if len(stripped) <= 6 and stripped.isalpha():
+        return True
+    return False
+
+
+def _looks_like_breadcrumb(text: str) -> bool:
+    stripped = text.strip()
+    if len(stripped) > 30 or not stripped:
+        return False
+    if any(ch.isdigit() for ch in stripped):
+        return False
+    tokens = stripped.split()
+    if len(tokens) <= 4 and all(token[0].isupper() for token in tokens if token):
+        return True
+    return False
+
+
+def _clean_lines(lines: List[str]) -> List[str]:
+    cleaned: List[str] = []
+    nav_buffer: List[str] = []
+
+    def _flush_buffer():
+        nonlocal nav_buffer
+        if len(nav_buffer) == 1:
+            cleaned.append(nav_buffer[0])
+        nav_buffer.clear()
+
+    for line in lines:
+        stripped = line.strip()
+        lower = stripped.lower()
+        if not stripped:
+            _flush_buffer()
+            continue
+        if _should_skip_line(lower):
+            nav_buffer.clear()
+            continue
+        if _looks_like_breadcrumb(stripped):
+            nav_buffer.append(stripped)
+            continue
+        _flush_buffer()
+        if cleaned and cleaned[-1] == stripped:
+            continue
+        cleaned.append(stripped)
+
+    _flush_buffer()
+    deduped: List[str] = []
+    for line in cleaned:
+        if deduped and deduped[-1] == line:
+            continue
+        deduped.append(line)
+    return deduped
 
 
 def _extract_lines_and_title(root) -> Tuple[List[str], str]:
@@ -114,7 +178,7 @@ def _extract_lines_and_title(root) -> Tuple[List[str], str]:
             if _should_skip_line(lower):
                 continue
             lines.append(text)
-    return lines, first_h1
+    return _clean_lines(lines), first_h1
 
 
 def _write_file(
@@ -226,3 +290,17 @@ def fetch_sources(specs: Sequence[SourceSpec]) -> Tuple[List[Path], List[dict]]:
         written.append(out_path)
 
     return written, failed
+
+
+def _self_test() -> None:
+    sample = [
+        "Save",
+        "Share",
+        "On this page",
+        "Learn more about mortgage insurance.",
+    ]
+    cleaned = _clean_lines(sample)
+    assert cleaned == ["Learn more about mortgage insurance."], cleaned
+
+
+_self_test()

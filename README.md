@@ -73,6 +73,7 @@ python3 scripts/fetch_urls_to_txt.py --urls-file data/corpus/seed_urls/cra_fthb_
 curl -X POST http://127.0.0.1:8000/admin/ingest -H "X-Admin-Token: <token>"
 ```
 For frequently changing sources (OSFI, CRA program details), re-fetch these packs at least weekly before re-ingesting.
+After changing extraction/cleaning rules, be sure to rerun the fetch script(s) and `/admin/ingest` (or `/admin/fetch_and_ingest`) so the FAISS index reflects the updated corpus text.
 
 ## Deploying to Render (API)
 

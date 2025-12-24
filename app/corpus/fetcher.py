@@ -169,9 +169,11 @@ def _load_specs_from_payload(data) -> List[SourceSpec]:
 
 
 def load_seed_packs(pack: str | None = None) -> Tuple[List[SourceSpec], List[str]]:
-    seeds_dir = Path(settings.corpus_raw_path).resolve().parent / "seed_urls"
+    seeds_dir = Path(settings.seed_urls_dir).resolve()
     if not seeds_dir.exists():
-        raise FileNotFoundError(f"Seed directory not found: {seeds_dir}")
+        raise FileNotFoundError(
+            f"Seed directory not found: {seeds_dir} (ensure repo packs exist; corpus_raw_path={settings.corpus_raw_path})"
+        )
 
     if not pack or pack.strip().lower() == "all":
         files = sorted(seeds_dir.glob("*.json"))

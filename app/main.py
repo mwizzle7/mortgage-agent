@@ -70,6 +70,7 @@ def health():
         "ip_rate_limit_enabled": settings.ip_rate_limit_enabled,
         "ip_rate_limit_window_seconds": settings.ip_rate_limit_window_seconds,
         "ip_rate_limit_max_requests": settings.ip_rate_limit_max_requests,
+        "seed_urls_dir": settings.seed_urls_dir,
     }
 
 

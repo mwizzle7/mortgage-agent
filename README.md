@@ -60,6 +60,7 @@ curl -X POST http://127.0.0.1:8000/admin/ingest -H "X-Admin-Token: <token>"
 
 The script normalizes URLs (fixing `htmlz` typos), extracts the `<main>` content, and writes deterministic filenames such as `canadaca__down-payment__CA__YYYY-MM-DD.txt`.
 Extraction strips common navigation/boilerplate blocks (Related links, Report a problem, Date modified, etc.) so only the main guidance content remains.
+The committed seed packs live under `data/corpus/seed_urls/`. When deployed (Render), fetched raw corpus files plus FAISS indexes and SQLite logs live on the persistent disk mounted at `/data/...`.
 
 ## Corpus Packs
 

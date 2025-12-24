@@ -1,5 +1,6 @@
 import os
 from dataclasses import dataclass
+from pathlib import Path
 
 from dotenv import load_dotenv
 
@@ -8,6 +9,17 @@ load_dotenv(override=True)
 _app_env = os.getenv("APP_ENV", "development")
 _is_production = _app_env.strip().lower() == "production"
 _data_base_default = os.getenv("DATA_BASE_PATH") or ("/data" if _is_production else "./data")
+
+
+def _resolve_repo_root() -> Path:
+    here = Path(__file__).resolve()
+    for parent in [here] + list(here.parents):
+        if (parent / "app").exists() and (parent / "data").exists():
+            return parent
+    return Path.cwd()
+
+
+_repo_root = _resolve_repo_root()
 
 def _get_bool(name: str, default: bool) -> bool:
     v = os.getenv(name, str(default)).strip().lower()
@@ -47,6 +59,7 @@ class Settings:
 
     # Logging DB
     log_db_path: str = os.getenv("LOG_DB_PATH") or os.path.join(_data_base_default, "logs/events.db")
+    seed_urls_dir: str = os.getenv("SEED_URLS_DIR") or str(_repo_root / "data" / "corpus" / "seed_urls")
 
     # Governance flags (not used yet in skeleton, but loaded)
     strict_grounding: bool = _get_bool("STRICT_GROUNDING", True)
